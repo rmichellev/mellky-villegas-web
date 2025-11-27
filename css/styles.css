@@ -465,3 +465,7 @@ footer p {
   transform: translateY(-1px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
 }
+
+body {
+  padding-bottom: 60px; /* Para que el contenido no quede debajo del footer */
+}
