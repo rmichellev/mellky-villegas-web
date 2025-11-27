@@ -28,7 +28,7 @@
     <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#inicio">
-                Mellky Villegas <span class="brand-accent">Villegas</span>
+                Mellky <span class="brand-accent">Villegas</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
@@ -88,16 +88,26 @@
                 </div>
 <div class="video-container text-center">
   <div class="video-container text-center">
-  <video
-    class="video-portada shadow-lg"
-    controls
-    playsinline
-    muted
-    preload="metadata"
-  >
-    <source src="img/video-portada.mp4" type="video/mp4" />
-    Tu navegador no soporta reproducción de video.
-  </video>
+  <div class="video-container text-center">
+  <div class="video-wrapper">
+    <video
+      id="video-portada"
+      src="img/video-portada.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+    ></video>
+
+    <button id="btn-audio" class="btn-audio">
+      🔊 Activar audio
+    </button>
+  </div>
+
+  <p class="text-center mt-3 text-light">
+    Video referencial · Pronto verás aquí la versión final del libro.
+  </p>
+
 </div>
 
 </div>
@@ -601,6 +611,37 @@ document.addEventListener('DOMContentLoaded', function () {
     popup.classList.add("d-none");
   });
 });
+</script>
+<script>
+  const video = document.getElementById('video-portada');
+  const btnAudio = document.getElementById('btn-audio');
+
+  // Aseguramos que intente reproducir al cargar
+  window.addEventListener('load', () => {
+    if (video) {
+      video.play().catch((e) => {
+        console.log('El navegador bloqueó el autoplay:', e);
+      });
+    }
+  });
+
+  // Cambiar entre silencio / con audio
+  btnAudio.addEventListener('click', () => {
+    if (!video) return;
+
+    if (video.muted) {
+      video.muted = false;
+      btnAudio.textContent = '🔇 Silenciar';
+    } else {
+      video.muted = true;
+      btnAudio.textContent = '🔊 Activar audio';
+    }
+
+    // Asegurar que el video esté reproduciéndose
+    video.play().catch((e) => {
+      console.log('No se pudo reproducir el video:', e);
+    });
+  });
 </script>
 
 
