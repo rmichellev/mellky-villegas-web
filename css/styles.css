@@ -469,3 +469,11 @@ footer p {
 body {
   padding-bottom: 60px; /* Para que el contenido no quede debajo del footer */
 }
+
+/* Todas las fotos cuadradas con esquinas redondeadas */
+.foto-cuadrada {
+  max-width: 150px;
+  width: 150%;          /* Se adapta al ancho del contenedor */
+  max-width: 450px;     /* Tamaño máximo visual (puedes subir/bajar este valor) */
+  border-radius: 18px; /* Esquinas redondeadas */
+}
