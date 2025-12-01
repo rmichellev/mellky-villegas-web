@@ -663,6 +663,56 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
+<!-- Popup Banner Mellky Villegas -->
+<div id="popupMellky" class="popup-overlay" style="display: none;">
+  <div class="popup-content shadow-lg">
+    <button class="popup-close" onclick="cerrarPopup()">×</button>
+
+    <h3 class="fw-bold text-center mb-3">✨ Descubre más de Mellky Villegas ✨</h3>
+
+    <p class="text-center mb-4">Accede a recursos exclusivos y mantente al día con el lanzamiento del libro.</p>
+
+    <div class="d-flex flex-column gap-3">
+
+      <!-- Botón Amazon -->
+      <a href="#" class="btn btn-primary w-100" style="background: linear-gradient(45deg, #7b2ff7, #f72f85); border: none;">
+        Comprar en Amazon (Próximamente)
+      </a>
+
+      <!-- Botón Solicitar Conferencia -->
+      <a href="#contacto" class="btn btn-outline-light w-100">
+        Solicitar a Mellky para un evento o conferencia
+      </a>
+
+      <!-- Botón YouTube -->
+      <a href="https://www.youtube.com" target="_blank" class="btn btn-danger w-100">
+        Suscribirse al canal de YouTube
+      </a>
+
+      <!-- Botón Podcast Spotify -->
+      <a href="https://open.spotify.com" target="_blank" class="btn btn-success w-100">
+        Escuchar Podcast en Spotify
+      </a>
+
+    </div>
+
+    <p class="text-center mt-4" style="font-size: 14px; opacity: 0.7;">
+      Puedes cerrar este mensaje en cualquier momento.
+    </p>
+  </div>
+</div>
+
+<script>
+  // Mostrar el popup a los 3 segundos
+  setTimeout(() => {
+    document.getElementById("popupMellky").style.display = "flex";
+  }, 3000);
+
+  // Función para cerrar popup
+  function cerrarPopup() {
+    document.getElementById("popupMellky").style.display = "none";
+  }
+</script>
 
 </body>
 </html>
