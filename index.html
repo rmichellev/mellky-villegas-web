@@ -1,718 +1,612 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- =========================================
+       METADATOS BÁSICOS
+       - Codificación, viewport y SEO principal
+  ========================================== -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mellky Villegas | Escritora, comunicadora y conferencista</title>
+  <meta
+    name="description"
+    content="Sitio oficial de Mellky Villegas: escritora, comunicadora y conferencista. Conoce su libro 'De la Vergüenza al Propósito', sus conferencias y contenido de inspiración diaria."
+  />
+  <meta name="author" content="Mellky Villegas" />
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>De la Vergüenza al Propósito | Mellky Villegas</title>
+  <!-- =========================================
+       FUENTES GOOGLE
+       - Serif para títulos (Playfair Display)
+       - Sans para textos (Poppins)
+  ========================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-    <!-- SEO básico -->
-    <meta name="description" content="De la Vergüenza al Propósito, el nuevo libro de Mellky Villegas. Una voz que acompaña a quienes cargan con culpa, silencio y vergüenza que desean caminar hacia la sanidad y el propósito.">
-    <meta name="author" content="Mellky Villegas">
+  <!-- =========================================
+       BOOTSTRAP 5 (CSS)
+       - Sistema de grid y componentes base
+  ========================================== -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-
-    <!-- Bootstrap -->
-    <link 
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-        rel="stylesheet"
-    />
-
-    <!-- Estilos propios -->
-    <link rel="stylesheet" href="css/styles.css" />
+  <!-- =========================================
+       ESTILOS PERSONALIZADOS
+       - Archivo principal de estilos del sitio
+  ========================================== -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-
-    <!-- NAVBAR -->
-    <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#inicio">
-                Mellky <span class="brand-accent">Villegas</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <nav class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#libro">El Libro</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Mellky Villegas">Sobre Mellky Villegas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#voz">Voz & Comunicación</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#devocional">Devocional diario</a></li>
-                    <li class="nav-item"><a class="btn btn-primary ms-lg-3" href="#contacto">
-                        Invítala a tu evento
-                    </a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- HERO -->
-    <section id="inicio" class="hero-section d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-6">
-                  <p class="hero-badge mb-3">Nuevo libro · Lanzamiento en enero</p>
-                   <h1 class="display-4 fw-bold mb-3 hero-title">
-                        De la Vergüenza<br>
-                        al Propósito
-                  </h1>
-
-                       De la Vergüenza al Propósito
-                    </h1>
-                    <p class="lead mb-4">
-                        Mellky Villegas, comunicadora, autora, esposa, mamá y pastora, 
-                        abre su corazón para acompañar a quienes cargan con culpa, silencio 
-                        o vergüenza, y necesitan recordar que Dios no cancela lo que un día 
-                        habló sobre ellos. Este libro es para quienes desean caminar del dolor 
-                        a la sanidad y del miedo al propósito.
-                    </p>
-
-                    <div class="d-flex flex-wrap gap-3 mb-4">
-                        <a href="#libro" class="btn btn-primary btn-lg">
-                            Aparta tu ejemplar
-                        </a>
-                        <a href="#contacto" class="btn btn-outline-light btn-lg">
-                            Recibir novedades del lanzamiento
-                        </a>
-                    </div>
-                    <p class="small text-light-50 mb-0">
-                        Ideal para mujeres y hombres que necesitan recordar que su historia 
-                        no termina en el dolor, sino en el propósito.
-                    </p>
-                </div>
-<div class="video-container text-center">
-  <div class="video-container text-center">
-  <div class="video-container text-center">
-  <div class="video-wrapper">
-    <video
-      id="video-portada"
-      src="img/video-portada.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-    ></video>
-
-    <button id="btn-audio" class="btn-audio">
-      🔊 Activar audio
-    </button>
-  </div>
-  
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: EL LIBRO -->
-    <section id="libro" class="py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-5 text-center">
-                  <img
-  src="img/portada-libro.jpg"
-  alt="Portada del libro De la Vergüenza al Propósito de Mellky Villegas"
-  class="img-fluid shadow-sm foto-cuadrada"
-/>
-
-                </div>
-                <div class="col-lg-7">
-                <p class="fw-semibold mt-3">
-    Ordenar libro: De la Vergüenza al Propósito en plataforma de Amazon
-</p>
-
-<h4 class="mt-4 mb-3">¿Cómo se presenta este libro según el público?</h4>
-
-<div class="accordion" id="descripcionEnfoques">
-
-  <!-- Público general -->
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingGeneral">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGeneral" aria-expanded="true" aria-controls="collapseGeneral">
-        Público bienestar y crecimiento personal
-      </button>
-    </h2>
-    <div id="collapseGeneral" class="accordion-collapse collapse show" aria-labelledby="headingGeneral" data-bs-parent="#descripcionEnfoques">
-      <div class="accordion-body">
-        <p>
-          Mellky Villegas, comunicadora, autora, esposa, madre y acompañante emocional, comparte un relato profundamente humano para quienes han cargado con culpa, silencio o vergüenza, y necesitan recordar que su valor no se pierde y que su propósito no se borra por las etapas difíciles que han vivido.
-        </p>
-        <p>
-          Este libro está dedicado a quienes desean avanzar del dolor a la sanación, y del miedo a una vida con dirección, significado y esperanza.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Público secular -->
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingSecular">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSecular" aria-expanded="false" aria-controls="collapseSecular">
-        Público enfoque psicológico y humano
-      </button>
-    </h2>
-    <div id="collapseSecular" class="accordion-collapse collapse" aria-labelledby="headingSecular" data-bs-parent="#descripcionEnfoques">
-      <div class="accordion-body">
-        <p>
-          Mellky Villegas, profesional en comunicación, escritora y mentora, abre su historia con honestidad para acompañar a quienes atraviesan heridas ocultas, culpa o vergüenza, y necesitan recordar que su identidad y su futuro no están determinados por su pasado.
-        </p>
-        <p>
-          Este libro está dirigido a quienes buscan transformar el dolor en fortaleza, reconstruir la confianza y reencontrar un propósito personal sólido, auténtico y profundamente humano.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Versión inclusiva espiritual -->
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingEspiritual">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEspiritual" aria-expanded="false" aria-controls="collapseEspiritual">
-        Versión enfoque espiritual amplio
-      </button>
-    </h2>
-    <div id="collapseEspiritual" class="accordion-collapse collapse" aria-labelledby="headingEspiritual" data-bs-parent="#descripcionEnfoques">
-      <div class="accordion-body">
-        <p>
-          Mellky Villegas, comunicadora, autora y guía en procesos de crecimiento personal, comparte una experiencia honesta y transformadora para quienes cargan emociones pesadas, culpa o silencios profundos, y necesitan recordar que siempre existe una voz interior capaz de levantar, orientar y renovar.
-        </p>
-        <p>
-          Este libro es para quienes buscan un camino hacia la claridad, la sanidad emocional y el sentido profundo, y desean convertir el miedo en propósito y la vulnerabilidad en fuerza.
-        </p>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="d-flex flex-wrap gap-3 mt-4">
-  <a href="#contacto" class="btn btn-primary">
-      Quiero información de preventa
-  </a>
-  <a href="#recursos" class="btn btn-outline-secondary">
-      Ver recursos relacionados
-  </a>
-</div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: SOBRE Mellky Villegas -->
-    <section id="Mellky Villegas" class="py-5">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-5 text-center">
-                    <!-- Cambiar por foto real -->
-                    <img
-  src="img/mellky-foto.jpg"
-  alt="Mellky Villegas"
-  class="img-fluid shadow profile-photo foto-cuadrada"
-/>
-                </div>
-                <div class="col-lg-7">
-                    <h2 class="section-title">Sobre Mellky Villegas</h2>
-                    <p class="lead">
-                        Mellky Villegas es comunicadora, autora, esposa, mamá y pastora. 
-                        Su voz ha acompañado durante años a miles de personas a través de la 
-                        radio, la televisión, conferencias y contenidos que abrazan el corazón.
-                    </p>
-                    <p>
-                        Creadora de guiones para radio y televisión, ha recibido reconocimientos 
-                        por su trabajo en locución, mejor voz, protocolo y etiqueta. Sin embargo, 
-                        más allá de los premios, su mayor pasión es ver vidas transformadas 
-                        cuando la Palabra de Dios y la comunicación se encuentran.
-                    </p>
-                    <p>
-                        Mellky Villegas cree en una comunicación que no solo informa, sino que sana, 
-                        edifica y despierta propósito. Cada proyecto, cada mensaje y cada libro 
-                        está marcado por autenticidad, excelencia y fe.
-                    </p>
-
-                    <div class="row mt-4 g-3">
-                        <div class="col-md-6">
-                            <div class="info-pill">
-                                + 12 Años de experiencia en medios de comunicación
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-pill">
-                                Conferencista en eventos, iglesias y medios.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: VOZ & COMUNICACIÓN -->
-    <section id="voz" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center mb-4">Voz & Comunicación</h2>
-            <p class="text-center mb-5">
-                La voz de Mellky Villegas no solo cuenta historias; construye puentes entre el corazón 
-                de Dios y el corazón de las personas. Estos son algunos de los espacios en los que puede servirte:
-            </p>
-
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Conferencias</h3>
-                            <p class="card-text">
-                                Mensajes de fe, sanidad emocional, propósito y familia 
-                                para iglesias, congresos y encuentros de mujeres.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Guiones</h3>
-                            <p class="card-text">
-                                Creación de guiones para radio, TV, programas especiales, 
-                                campañas y contenido audiovisual con enfoque cristiano y humano.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Locución & Voz</h3>
-                            <p class="card-text">
-                                Voz para spots, narraciones, podcasts, cápsulas devocionales 
-                                y proyectos que requieran una voz cálida y profesional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Formación</h3>
-                            <p class="card-text">
-                                Talleres, mentorías y cursos básicos de comunicación, 
-                                locución, protocolo y etiqueta orientados a líderes y servidores.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <a href="#contacto" class="btn btn-primary">
-                    Invitar a Mellky Villegas Villegas a un evento
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: AGENDA -->
-    <section id="agenda" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4">Agenda de lanzamiento</h2>
-            <p class="text-center mb-5">
-                Estos son algunos de los momentos especiales alrededor del lanzamiento del libro.
-                Las fechas pueden ajustarse a medida que se confirmen nuevos eventos.
-            </p>
-
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-date">Enero · Lanzamiento oficial</div>
-                            <div class="timeline-card">
-                                Presentación oficial del libro y mensaje principal del proyecto.
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-date">Enero · Firma de libros</div>
-                            <div class="timeline-card">
-                                Encuentros con lectores, tiempo de oración, fotos y dedicación especial.
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-date">Próximamente</div>
-                            <div class="timeline-card">
-                                Gira en iglesias, congresos y medios de comunicación. 
-                                Muy pronto anunciaremos más fechas.
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center mt-4">
-                <a href="#contacto" class="btn btn-outline-secondary">
-                    Solicitar a Mellky Villegas para tu ciudad o iglesia
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: RECURSOS -->
-    <section id="recursos" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title text-center mb-4">Recursos</h2>
-            <p class="text-center mb-5">
-                Poco a poco este espacio se llenará de recursos gratuitos: devocionales, 
-                artículos, audios y herramientas para tu vida espiritual y emocional.
-            </p>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Devocionales escritos</h3>
-                            <p class="card-text">
-                                Textos cortos para acompañar tus mañanas con Palabra, 
-                                reflexión y práctica para la vida diaria.
-                            </p>
-                            <p class="small text-muted mb-0">Próximamente</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Audios & cápsulas</h3>
-                            <p class="card-text">
-                                Mensajes en audio para escuchar en el auto, en casa o en tus tiempos de oración.
-                            </p>
-                            <p class="small text-muted mb-0">Próximamente</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h3 class="h5 card-title">Recursos para líderes</h3>
-                            <p class="card-text">
-                                Guías, dinámicas y materiales para acompañar grupos pequeños, 
-                                reuniones de mujeres y espacios de consejería.
-                            </p>
-                            <p class="small text-muted mb-0">Próximamente</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: DEVOCIONAL DIARIO -->
-<section id="devocional" class="py-5 devocional-section">
+  <!-- =========================================
+       HEADER / NAVBAR
+       - Menú fijo superior con logo y secciones
+  ========================================== -->
+  <header class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm main-navbar">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="devocional-card">
-                    <p class="devocional-tag mb-2">Espacio exclusivo</p>
-                    <h2 class="section-title mb-3">Devocional diario con Mellky Villegas</h2>
-                    <p class="devocional-text mb-4">
-                        Si deseas recibir cada mañana un devocional por Mellky Villegas,
-                        con palabra, reflexión y aplicación práctica, puedes inscribirte aquí. 
-                        Es un espacio íntimo, pensado para quienes quieren caminar de la vergüenza 
-                        al propósito de la mano de Dios, un día a la vez.
-                    </p>
+      <!-- Marca / Logo -->
+      <a class="navbar-brand brand-mark" href="#inicio">
+        <span class="brand-name">Mellky Villegas</span>
+        <span class="brand-tagline">Escritora · Comunicadora · Conferencista</span>
+      </a>
 
-                    <!-- FORMULARIO NETLIFY -->
-                    <form 
-                        name="devocional-diario" 
-                        method="POST" 
-                        data-netlify="true"
-                        class="devocional-form"
-                    >
-                        <!-- Campo oculto obligatorio para Netlify -->
-                        <input type="hidden" name="form-name" value="devocional-diario" />
+      <!-- Botón de menú en móvil -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+        aria-controls="navbarContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                        <div class="row g-2 g-md-3 align-items-center">
-                            <div class="col-md-6">
-                                <label class="form-label devocional-label">Nombre</label>
-                                <input 
-                                    type="text" 
-                                    name="nombre" 
-                                    class="form-control devocional-input" 
-                                    placeholder="Tu nombre"
-                                />
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label devocional-label">Correo electrónico*</label>
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    class="form-control devocional-input" 
-                                    placeholder="tunombre@correo.com"
-                                    required
-                                />
-                            </div>
-                        </div>
+      <!-- Enlaces de navegación -->
+      <nav class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#libro">El libro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#mellky">Sobre Mellky</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#voz">Voz & comunicación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#devocional">Devocional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
 
-                        <p class="small text-muted mt-3 mb-3">
-                            Al suscribirte, autorizas a recibir devocionales y actualizaciones de la autora. 
-                            Podrás darte de baja en cualquier momento.
-                        </p>
-
-                        <div class="d-flex flex-wrap gap-3 mt-2">
-                            <button type="submit" class="btn btn-primary devocional-btn">
-                                Quiero recibir el devocional diario
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+          <!-- CTA directo a WhatsApp en el navbar -->
+          <li class="nav-item ms-lg-3">
+            <a
+              href="https://wa.me/50687920910?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20tu%20libro%20y%20tus%20conferencias."
+              class="btn btn-navbar-cta"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Escribir por WhatsApp
+            </a>
+          </li>
+        </ul>
+      </nav>
     </div>
-</section>
+  </header>
 
-
-    <!-- SECCIÓN: CONTACTO -->
-    <section id="contacto" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center mb-4">Contacto & invitaciones</h2>
-            <p class="text-center mb-4">
-                Si deseas invitar a Mellky Villegas a tu iglesia, evento, congreso, programa de radio o TV,
-                o quieres recibir información del libro, completa este formulario.
+  <!-- =========================================
+       CONTENIDO PRINCIPAL
+  ========================================== -->
+  <main id="inicio">
+    <!-- =========================================
+         SECCIÓN HERO / PORTADA
+         - Video de fondo
+         - Mensaje principal
+         - Botones de acción
+    ========================================== -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Columna texto -->
+          <div class="col-lg-6 hero-text-col">
+            <p class="hero-kicker">De la vergüenza al propósito</p>
+            <h1 class="hero-title">
+              Una voz que transforma vergüenza en propósito y esperanza.
+            </h1>
+            <p class="hero-subtitle">
+              Mellky Villegas comparte un mensaje honesto, cercano y profundo que rompe silencios,
+              sana corazones y encamina a las personas hacia el diseño que Dios ya había escrito
+              para ellas.
             </p>
 
+            <div class="hero-actions">
+              <!-- CTA principal: WhatsApp libro -->
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20libro%20%22De%20la%20Verg%C3%BCenza%20al%20Prop%C3%B3sito%22."
+                class="btn btn-primary hero-btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quiero información del libro
+              </a>
 
-                        <div class="mb-3">
-                            <label class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" required />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">País / Ciudad</label>
-                            <input type="text" class="form-control" />
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Motivo de contacto</label>
-                            <select class="form-select">
-                                <option>Invitación a evento</option>
-                                <option>Información del libro</option>
-                                <option>Entrevista en medios</option>
-                                <option>Otro</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Mensaje</label>
-                            <textarea class="form-control" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Enviar mensaje
-                        </button>
-                    </form>
+              <!-- CTA secundaria: bajar a sección libro -->
+              <a href="#libro" class="btn btn-outline-secondary hero-btn-secondary">
+                Ver detalles del libro
+              </a>
+            </div>
+
+            <!-- Botón de audio del video -->
+            <button id="btn-audio" class="hero-audio-toggle" type="button">
+              🔈 Sin audio
+            </button>
+          </div>
+
+          <!-- Columna video -->
+          <div class="col-lg-6 hero-video-col">
+            <div class="hero-video-wrapper">
+              <video
+                id="video-portada"
+                class="hero-video"
+                src="img/video-portada.mp4"
+                autoplay
+                muted
+                loop
+                playsinline
+              ></video>
+              <div class="hero-video-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECCIÓN: EL LIBRO
+         - Presentación del libro y beneficios
+    ========================================== -->
+    <section id="libro" class="section-padding section-light">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <!-- Portada del libro -->
+          <div class="col-lg-5">
+            <div class="book-cover-wrapper fade-in-up">
+              <img
+                src="img/portada-libro.jpg"
+                alt="Portada del libro De la Vergüenza al Propósito de Mellky Villegas"
+                class="img-fluid rounded-4 shadow-lg book-cover-img"
+              />
+            </div>
+          </div>
+
+          <!-- Texto del libro -->
+          <div class="col-lg-7">
+            <div class="section-header mb-3">
+              <p class="section-kicker">El libro</p>
+              <h2 class="section-title">De la Vergüenza al Propósito</h2>
+            </div>
+
+            <p class="section-lead">
+              ¿Qué ocurre cuando la vergüenza deja de ser un final y se convierte en el punto de partida?
+              Este libro narra una historia de redención, resiliencia y fe, donde las heridas se transforman
+              en testimonio y el quebranto en un camino hacia el propósito.
+            </p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-md-6">
+                <div class="highlight-card">
+                  <h3>Una historia honesta</h3>
+                  <p>
+                    Mellky abre su corazón y comparte procesos reales que conectan con personas que han
+                    vivido culpa, silencio o vergüenza.
+                  </p>
                 </div>
+              </div>
+              <div class="col-md-6">
+                <div class="highlight-card">
+                  <h3>Un llamado a la libertad</h3>
+                  <p>
+                    Cada capítulo invita a caminar hacia la restauración y a abrazar el propósito que Dios
+                    ya tenía preparado.
+                  </p>
+                </div>
+              </div>
+            </div>
 
- <div class="contact-box h-100">
-    <div class="row align-items-center">
-        <!-- Columna de texto -->
-        <div class="col-md-7">
-            <p class="h4 mb-3">Información directa</p>
+            <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
+              <!-- CTA: información del lanzamiento / compra -->
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20lanzamiento%20y%20c%C3%B3mo%20adquirir%20el%20libro."
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Quiero información del lanzamiento
+              </a>
 
-            <p class="mb-2">
-                Para invitaciones, agenda, entrevistas y eventos:
+              <span class="text-muted small">
+                Ideal para grupos de estudio, ministerios de mujeres, jóvenes y procesos personales.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECCIÓN: SOBRE MELLKY
+         - Biografía breve y énfasis en su llamado
+    ========================================== -->
+    <section id="mellky" class="section-padding section-white">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <!-- Foto de Mellky -->
+          <div class="col-lg-5">
+            <div class="profile-photo-wrapper fade-in-up">
+              <img
+                src="img/mellky-foto.jpg"
+                alt="Fotografía de Mellky Villegas"
+                class="img-fluid rounded-4 shadow-lg profile-photo-img"
+              />
+            </div>
+          </div>
+
+          <!-- Texto sobre Mellky -->
+          <div class="col-lg-7">
+            <div class="section-header mb-3">
+              <p class="section-kicker">Sobre la autora</p>
+              <h2 class="section-title">Mellky Villegas</h2>
+            </div>
+
+            <p class="section-lead">
+              Mellky Villegas es escritora, comunicadora y conferencista. Su voz se ha convertido en un
+              espacio seguro para quienes necesitan escuchar que no están solos en su proceso.
             </p>
 
-            <p class="mb-1"><strong>Correo:</strong>
-                <a href="mailto:mvillegasv1201@gmail.com">mvillegasv1201@gmail.com</a>
+            <p>
+              A través de su historia personal y su experiencia en comunicación, Mellky construye puentes
+              entre el corazón de las personas y el mensaje del Evangelio, con un estilo cercano, auténtico
+              y lleno de esperanza.
             </p>
 
-            <p class="mb-1"><strong>WhatsApp:</strong>
-                <a href="https://wa.me/50687920910" target="_blank">+506 8792 0910</a>
-            </p>
-
-            <p class="mb-1"><strong>Redes sociales oficiales:</strong></p>
-            <ul class="list-unstyled mb-2">
-                <li>Instagram: <a href="https://instagram.com/Mellkyvillegas" target="_blank">@Mellkyvillegas</a></li>
-                <li>Facebook: <a href="https://facebook.com/Mellky Villegas" target="_blank">Mellky Villegas</a></li>
-                <li>YouTube: <a href="#" target="_blank">Mellky Villegas</a></li>
-                <li>TikTok: <a href="https://tiktok.com/@Mellkyvillegas" target="_blank">@Mellkyvillegas</a></li>
+            <ul class="icon-list mt-3">
+              <li>Comunicación clara, sensible y con fundamento bíblico.</li>
+              <li>Enfoque especial en procesos internos, identidad y propósito.</li>
+              <li>Experiencia en conferencias para iglesias, eventos de mujeres y espacios juveniles.</li>
             </ul>
 
-            <p class="small text-muted mb-0">
-                Los datos de contacto pueden actualizarse cuando sea necesario.
+            <div class="mt-4 d-flex flex-wrap gap-3 align-items-center">
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quisiera%20informaci%C3%B3n%20para%20invitarte%20a%20una%20conferencia%20o%20evento."
+                class="btn btn-outline-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Invitar a Mellky a un evento
+              </a>
+              <span class="text-muted small">
+                Agenda conferencias, devocionales y espacios de formación para tu comunidad.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECCIÓN: VOZ & COMUNICACIÓN
+         - Áreas donde sirve: conferencias, medios, contenido
+    ========================================== -->
+    <section id="voz" class="section-padding section-soft">
+      <div class="container">
+        <div class="section-header text-center mb-4">
+          <p class="section-kicker">Voz & comunicación</p>
+          <h2 class="section-title">Un mensaje que viaja por distintos formatos</h2>
+          <p class="section-lead">
+            Mellky desarrolla contenido que acompaña, inspira y confronta con amor,
+            tanto en espacios presenciales como en medios de comunicación y plataformas digitales.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Conferencias -->
+          <div class="col-md-4">
+            <div class="service-card">
+              <h3>Conferencias & encuentros</h3>
+              <p>
+                Mensajes para iglesias, congresos, retiros y eventos de mujeres, jóvenes y liderazgo.
+                Diseñados para generar procesos profundos y prácticos.
+              </p>
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20conferencias%20y%20temas%20disponibles."
+                class="service-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Consultar temas de conferencias →
+              </a>
+            </div>
+          </div>
+
+          <!-- Medios de comunicación -->
+          <div class="col-md-4">
+            <div class="service-card">
+              <h3>Radio, TV & podcasts</h3>
+              <p>
+                Participación en programas, entrevistas y segmentos especiales para audiencias que
+                buscan contenido de fe, restauración y propósito.
+              </p>
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quiero%20coordinar%20una%20entrevista%20o%20participaci%C3%B3n%20en%20medios."
+                class="service-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Coordinar una entrevista →
+              </a>
+            </div>
+          </div>
+
+          <!-- Contenido digital -->
+          <div class="col-md-4">
+            <div class="service-card">
+              <h3>Contenido digital & devocionales</h3>
+              <p>
+                Mensajes breves, devocionales y cápsulas de inspiración diaria para plataformas
+                digitales, redes sociales y comunidades en línea.
+              </p>
+              <a
+                href="https://wa.me/50687920910?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20contenido%20digital%20y%20devocionales."
+                class="service-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Recibir más información →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECCIÓN: DEVOCIONAL DIARIO
+         - Registro vía WhatsApp, sin formulario
+    ========================================== -->
+    <section id="devocional" class="section-padding section-white">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="devocional-card">
+              <p class="devocional-tag">Espacio exclusivo</p>
+              <h2 class="section-title mb-3">Devocional diario con Mellky Villegas</h2>
+
+              <p class="section-lead">
+                Un espacio de palabra, reflexión y aplicación práctica para iniciar el día
+                con intención, fe y enfoque en el propósito.
+              </p>
+
+              <p>
+                Si deseas recibir información sobre el devocional diario y cómo ser parte de este espacio,
+                puedes escribir directamente por WhatsApp. Recibirás todos los detalles y pasos a seguir.
+              </p>
+
+              <div class="mt-4 d-flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/50687920910?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20devocional%20diario%20con%20Mellky%20Villegas."
+                  class="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Quiero información del devocional diario
+                </a>
+                <span class="text-muted small">
+                  Mensajes aptos para todo público, con enfoque cristiano y práctico.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SECCIÓN: CONTACTO
+         - Todo va directo a WhatsApp (sin formularios)
+         - Información de correo y redes
+    ========================================== -->
+    <section id="contacto" class="section-padding section-soft contact-section">
+      <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-lg-8 text-center">
+            <p class="section-kicker">Contacto & invitaciones</p>
+            <h2 class="section-title mb-3">Hablemos</h2>
+            <p class="section-lead">
+              Si deseas invitar a Mellky a tu iglesia, evento, congreso, programa de radio o TV;
+              o si necesitas información sobre el libro o el devocional, será un gusto conversar contigo.
             </p>
+          </div>
         </div>
 
-        <!-- Columna de foto -->
-        <div class="col-md-5 text-center mt-4 mt-md-0">
-           <img
-  src="img/mellky-premio.jpg"
-  alt="Mellky Villegas – Premio Locutor Internacional del Año"
-  class="img-fluid shadow-lg foto-cuadrada"
-/>
+        <div class="row g-4 align-items-stretch">
+          <!-- Columna 1: CTA principal a WhatsApp -->
+          <div class="col-md-6">
+            <div class="contact-primary h-100">
+              <h3>Contacto directo por WhatsApp</h3>
+              <p>
+                Atención personalizada para coordinar fechas, detalles logísticos y necesidades específicas
+                de tu evento o proyecto.
+              </p>
 
+              <div class="contact-actions">
+                <a
+                  href="https://wa.me/50687920910?text=Hola%2C%20quisiera%20coordinar%20una%20invitaci%C3%B3n%20o%20consultar%20informaci%C3%B3n."
+                  class="btn-whatsapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Escribir por WhatsApp
+                </a>
+                <p class="contact-note">
+                  Respuesta en horario de oficina (hora Costa Rica).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Información adicional -->
+          <div class="col-md-6">
+            <div class="contact-secondary h-100">
+              <h3>Información de contacto</h3>
+
+              <ul class="icon-list">
+                <li>
+                  <strong>Correo electrónico:</strong>
+                  <a href="mailto:mvillegasv1201@gmail.com">mvillegasv1201@gmail.com</a>
+                </li>
+                <li>
+                  <strong>WhatsApp:</strong>
+                  <a
+                    href="https://wa.me/50687920910"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    +506 8792 0910
+                  </a>
+                </li>
+                <li>
+                  <strong>Redes sociales:</strong>
+                  Instagram, Facebook y YouTube:
+                  <span>@MellkyVillegas</span>
+                </li>
+              </ul>
+
+              <p class="small text-muted mt-3">
+                Las invitaciones se coordinan con anticipación para asegurar una atención ordenada
+                y excelente en cada actividad.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================
+       BANNER INFERIOR DE LANZAMIENTO
+       - Aviso elegante y sutil sobre el libro
+  ========================================== -->
+  <div class="launch-banner" id="launchBanner">
+    <div class="launch-banner__content">
+      <span class="launch-badge">Nuevo libro</span>
+      <span class="launch-text">
+        “De la Vergüenza al Propósito” – muy pronto disponible.
+      </span>
+
+      <div class="launch-actions">
+        <a href="#libro" class="launch-link">Ver detalles</a>
+        <a
+          href="https://wa.me/50687920910?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20lanzamiento%20del%20libro."
+          class="launch-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Quiero más información
+        </a>
+      </div>
+
+      <button
+        class="launch-close"
+        aria-label="Cerrar aviso"
+        onclick="closeLaunchBanner()"
+        type="button"
+      >
+        ✕
+      </button>
     </div>
-</div>
+  </div>
 
+  <!-- =========================================
+       FOOTER
+       - Derechos de autor y año dinámico
+  ========================================== -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <p class="mb-0 small">
+        &copy; <span id="year"></span> Mellky Villegas. Todos los derechos reservados.
+      </p>
+      <p class="mb-0 small text-muted">
+        Sitio desarrollado para comunicar mensajes de fe, restauración y propósito.
+      </p>
+    </div>
+  </footer>
 
-    <!-- FOOTER -->
-    <footer class="py-3 bg-dark text-light">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <p class="mb-1 mb-md-0">
-                © <span id="year"></span> Mellky Villegas. Todos los derechos reservados.
-            </p>
-            <p class="mb-0 small">
-                Sitio desarrollado por Tracy Ramos.
-            </p>
-        </div>
-    </footer>
+  <!-- =========================================
+       SCRIPTS
+       - Bootstrap
+       - Año dinámico
+       - Control de video
+       - Cierre de banner
+  ========================================== -->
 
-    <footer class="bg-dark text-light text-center py-3 fixed-bottom">
-    <p class="mb-0">Sitio creado con excelencia por Tracy Ramos</p>
-    </footer>
-   
+  <!-- JS 1: Bootstrap (menú responsive, colapsables, etc.) -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
 
-    <!-- Bootstrap JS -->
-    <script 
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
+  <!-- JS 2: Año dinámico en el footer -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-    <!-- Año dinámico -->
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+  <!-- JS 3: Control del video de portada y del botón de audio -->
+  <script>
+    const video = document.getElementById("video-portada");
+    const btnAudio = document.getElementById("btn-audio");
 
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('form-contacto');
-  const popup = document.getElementById('popup-exito');
-  const cerrar = document.getElementById('popup-cerrar');
-
-  if (!form) return;
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(form);
-
-    fetch("/", {
-      method: "POST",
-      body: formData
-    })
-    .then(() => {
-      popup.classList.remove("d-none");
-      form.reset();
-    })
-    .catch(() => {
-      alert("Hubo un error al enviar el mensaje. Inténtalo nuevamente.");
+    // Intentar reproducir el video al cargar la página
+    window.addEventListener("load", () => {
+      if (video) {
+        video.play().catch((e) => {
+          console.log("El navegador bloqueó el autoplay:", e);
+        });
+      }
     });
-  });
 
-  cerrar.addEventListener("click", () => {
-    popup.classList.add("d-none");
-  });
-});
-</script>
-<script>
-  const video = document.getElementById('video-portada');
-  const btnAudio = document.getElementById('btn-audio');
-
-  // Aseguramos que intente reproducir al cargar
-  window.addEventListener('load', () => {
-    if (video) {
-      video.play().catch((e) => {
-        console.log('El navegador bloqueó el autoplay:', e);
+    // Botón para activar / desactivar audio del video
+    if (btnAudio && video) {
+      btnAudio.addEventListener("click", () => {
+        if (video.muted) {
+          video.muted = false;
+          btnAudio.textContent = "🔊 Con audio";
+        } else {
+          video.muted = true;
+          btnAudio.textContent = "🔈 Sin audio";
+        }
       });
     }
-  });
+  </script>
 
-  // Cambiar entre silencio / con audio
-  btnAudio.addEventListener('click', () => {
-    if (!video) return;
-
-    if (video.muted) {
-      video.muted = false;
-      btnAudio.textContent = '🔇 Silenciar';
-    } else {
-      video.muted = true;
-      btnAudio.textContent = '🔊 Activar audio';
+  <!-- JS 4: Cerrar el banner inferior de lanzamiento -->
+  <script>
+    function closeLaunchBanner() {
+      const banner = document.getElementById("launchBanner");
+      if (banner) {
+        banner.style.display = "none";
+      }
     }
-
-    // Asegurar que el video esté reproduciéndose
-    video.play().catch((e) => {
-      console.log('No se pudo reproducir el video:', e);
-    });
-  });
-</script>
-
-
-<!-- POP-UP de éxito -->
-<div id="popup-exito" class="popup-overlay d-none">
-  <div class="popup-box">
-    <h2>¡Tu mensaje fue enviado con éxito! 💜</h2>
-    <p>
-      Gracias por escribirnos. Tu invitación, consulta o mensaje ha sido recibido correctamente.<br><br>
-      Mellky y su equipo leerán tu mensaje con atención y se comunicarán contigo lo antes posible.
-    </p>
-    <p class="popup-frase">
-      “Dios no cancela lo que un día habló sobre ti.”  
-    </p>
-    <button id="popup-cerrar" class="popup-btn">Cerrar</button>
-  </div>
-</div>
-
-<!-- Popup Banner Mellky Villegas -->
-<div id="popupMellky" class="popup-overlay" style="display: none;">
-  <div class="popup-content shadow-lg">
-    <button class="popup-close" onclick="cerrarPopup()">×</button>
-
-    <h3 class="fw-bold text-center mb-3">✨ Descubre más de Mellky Villegas ✨</h3>
-
-    <p class="text-center mb-4">Accede a recursos exclusivos y mantente al día con el lanzamiento del libro.</p>
-
-    <div class="d-flex flex-column gap-3">
-
-      <!-- Botón Amazon -->
-      <a href="#" class="btn btn-primary w-100" style="background: linear-gradient(45deg, #7b2ff7, #f72f85); border: none;">
-        Comprar en Amazon (Próximamente)
-      </a>
-
-      <!-- Botón Solicitar Conferencia -->
-      <a href="#contacto" class="btn btn-outline-light w-100">
-        Solicitar a Mellky para un evento o conferencia
-      </a>
-
-      <!-- Botón YouTube -->
-      <a href="https://www.youtube.com" target="_blank" class="btn btn-danger w-100">
-        Suscribirse al canal de YouTube
-      </a>
-
-      <!-- Botón Podcast Spotify -->
-      <a href="https://open.spotify.com" target="_blank" class="btn btn-success w-100">
-        Escuchar Podcast en Spotify
-      </a>
-
-    </div>
-
-    <p class="text-center mt-4" style="font-size: 14px; opacity: 0.7;">
-      Puedes cerrar este mensaje en cualquier momento.
-    </p>
-  </div>
-</div>
-
-<script>
-  // Mostrar el popup a los 3 segundos
-  setTimeout(() => {
-    document.getElementById("popupMellky").style.display = "flex";
-  }, 3000);
-
-  // Función para cerrar popup
-  function cerrarPopup() {
-    document.getElementById("popupMellky").style.display = "none";
-  }
-</script>
-
+  </script>
 </body>
 </html>

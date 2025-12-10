@@ -1,520 +1,557 @@
+/* =========================================
+   1. VARIABLES Y ESTILOS BASE
+   - Colores, tipografías y ajustes globales
+========================================= */
+
 :root {
-    --color-primario: #7b4bff;      /* Lila profundo elegante */
-    --color-secundario: #f3e7ff;    /* Lila muy claro */
-    --color-acento: #f3a952;        /* Dorado suave */
-    --color-texto: #1b1433;         /* Morado casi negro */
-    --color-hero-degrade-1: #2b1348;
-    --color-hero-degrade-2: #7b4bff;
+  --color-bg: #f7f5fa;
+  --color-soft: #f3f4f6;
+  --color-primary: #7c3aed; /* morado elegante */
+  --color-primary-dark: #5b21b6;
+  --color-accent: #facc15; /* dorado suave */
+  --color-text-main: #111827;
+  --color-text-muted: #6b7280;
+  --radius-lg: 1.5rem;
+  --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.15);
 }
 
-/* ===== TIPOGRAFÍAS ===== */
-body {
-    font-family: 'Inter', sans-serif;
-    color: #1E1B4B;
-}
-
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: #1E1B4B; /* oscuro elegante */
-}
-
-
-/* ===== COLORES DE MARCA ===== */
-:root {
-    --lavanda: #A78BFA;
-    --lavanda-claro: #F5F3FF;
-    --dorado: #FACC15;
-    --texto-oscuro: #1E1B4B;
-    --gris-suave: #4B5563;
-}
-
-/* ===== SUBRAYADO TITULO SECCIONES ===== */
-.section-title {
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 6px;
-    background: linear-gradient(90deg, var(--lavanda), var(--dorado));
-    bottom: -12px;
-    left: 0;
-    border-radius: 4px;
-}
-
-html {
-    scroll-behavior: smooth;
-
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: var(--color-texto);
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--color-text-main);
+  background-color: #ffffff;
+  scroll-behavior: smooth;
 }
 
-/* Navbar */
-.navbar-brand {
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    font-size: 0.95rem;
+img {
+  max-width: 100%;
+  display: block;
 }
 
-.brand-accent {
-    color: var(--color-primario);
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* =========================================
+   2. NAVBAR
+========================================= */
+
+.main-navbar {
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.main-navbar .navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
 }
 
 .nav-link {
-    font-size: 0.95rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
 }
 
-.nav-link:hover {
-    color: var(--color-primario) !important;
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--color-primary);
 }
 
-/* Hero */
+.btn-navbar-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+}
+
+.btn-navbar-cta:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.45);
+}
+
+/* =========================================
+   3. HERO / PORTADA
+========================================= */
+
 .hero-section {
-    min-height: 100vh;
-    padding-top: 90px;
-    padding-bottom: 60px;
-    background: linear-gradient(135deg, var(--color-hero-degrade-1), var(--color-hero-degrade-2));
-    color: #fff;
-   
-
+  padding-top: 6.5rem;
+  padding-bottom: 4.5rem;
+  background: radial-gradient(circle at top left, #fdf2ff 0, #ffffff 45%, #eef2ff 100%);
 }
 
-.hero-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 999px;
-    background-color: rgba(255, 255, 255, 0.12);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+.hero-text-col {
+  margin-top: 1.5rem;
 }
 
-.hero-section .lead {
-    color: #f5f1ff;
-}
-
-.text-light-50 {
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.text-light-70 {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.book-card {
-    background-color: rgba(255, 255, 255, 0.06);
-    border-radius: 18px;
-    padding: 18px;
-}
-
-/* Secciones generales */
-.section-title {
-    font-size: 1.9rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    position: relative;
-    display: inline-block;
-}
-
-.section-title::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
-}
-
-/* Fondo sutil para secciones claras */
-section {
-    scroll-margin-top: 80px;
-}
-
-/* Foto de perfil */
-.profile-photo {
-    max-width: 260px;
-    object-fit: cover;
-}
-
-/* Pills de info */
-.info-pill {
-    padding: 10px 14px;
-    border-radius: 999px;
-    background-color: var(--color-secundario);
-    font-size: 0.9rem;
-}
-
-/* Timeline agenda */
-.timeline {
-    list-style: none;
-    padding-left: 0;
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background-color: #ddd;
-}
-
-.timeline li {
-    position: relative;
-    padding-left: 40px;
-    margin-bottom: 24px;
-}
-
-.timeline-date {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-primario);
-    margin-bottom: 4px;
-}
-
-.timeline-card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 10px 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    font-size: 0.95rem;
-}
-
-.timeline li::before {
-    content: "";
-    position: absolute;
-    left: 6px;
-    top: 4px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--color-primario);
-}
-
-/* Tarjetas */
-.card {
-    border: none;
-    border-radius: 14px;
-}
-
-.card-body {
-    padding: 18px 18px 20px 18px;
-}
-
-/* Caja de contacto */
-.contact-box {
-    background-color: #faf7ff;
-    border-radius: 14px;
-    padding: 18px;
-}
-
-/* Botones */
-.btn-primary {
-    background-color: var(--color-primario);
-    border-color: var(--color-primario);
-}
-
-.btn-primary:hover {
-    filter: brightness(0.9);
-    border-color: var(--color-primario);
-}
-
-.btn-outline-light {
-    border-color: rgba(255, 255, 255, 0.7);
-    color: #fff;
-}
-
-.btn-outline-light:hover {
-    background-color: #fff;
-    color: var(--color-hero-degrade-1);
-}
-
-/* Footer */
-footer p {
-    font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .hero-section {
-        text-align: center;
-    }
-}
-
-.profile-photo {
-    width: 100%;
-    max-width: 380px;
-    border-radius: 50%;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-photo:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.18);
+.hero-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
 .hero-title {
-    background: linear-gradient(90deg, #F8F7FF, #E9D8FD, #FACC15);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.1rem, 3vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-.hero-title {
-    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 32rem;
 }
 
-.hero-title {
-    color: #F8F7FF; /* blanco suave */
-}
-
-/* =======================
-   SECCIÓN DEVOCIONAL DIARIO
-   ======================= */
-
-.devocional-section {
-    background: radial-gradient(circle at top, rgba(167, 139, 250, 0.25), transparent 55%),
-                #f9fafb;
-}
-
-.devocional-card {
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 28px 24px;
-    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Detalle decorativo */
-.devocional-card::before {
-    content: "";
-    position: absolute;
-    top: -80px;
-    right: -80px;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(circle, rgba(244, 214, 94, 0.55), transparent 60%);
-    opacity: 0.8;
-}
-
-.devocional-tag {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: #6b21a8;
-    font-weight: 600;
-}
-
-.devocional-text {
-    font-size: 0.98rem;
-    color: #4b5563;
-}
-
-.devocional-form {
-    position: relative;
-    z-index: 1;
-}
-
-.devocional-label {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #4b5563;
-}
-
-.devocional-input {
-    border-radius: 999px;
-    padding: 10px 14px;
-    border: 1px solid #e5e7eb;
-    font-size: 0.95rem;
-}
-
-.devocional-input:focus {
-    border-color: #a78bfa;
-    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.25);
-}
-
-.devocional-btn {
-    border-radius: 999px;
-    padding-inline: 22px;
-    font-weight: 600;
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .devocional-card {
-        padding: 22px 18px;
-        border-radius: 18px;
-    }
-}
-
-/* Fondo oscuro difuminado */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(6px);
+.hero-actions {
+  margin-top: 1.75rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  flex-wrap: wrap;
+  gap: 0.85rem;
 }
 
-/* Caja del pop-up */
-.popup-box {
-  background: white;
-  padding: 40px 40px;
-  border-radius: 24px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  animation: popup-anim 0.4s ease;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+.hero-btn-primary {
+  border-radius: 999px;
+  padding: 0.85rem 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 18px 40px rgba(124, 58, 237, 0.35);
 }
 
-/* Animación */
-@keyframes popup-anim {
-  from { transform: scale(0.7); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+.hero-btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  box-shadow: 0 20px 46px rgba(88, 28, 135, 0.45);
 }
 
-/* Botón */
-.popup-btn {
-  margin-top: 25px;
-  padding: 12px 26px;
-  background: #7f56d9;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.popup-btn:hover {
-  background: #6b46c1;
-}
-
-/* Frase */
-.popup-frase {
-  font-style: italic;
-  color: #7f56d9;
-  margin-top: 15px;
+.hero-btn-secondary {
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
   font-weight: 500;
 }
 
-/* Ocultar */
-.d-none { display: none !important; }
-
-.video-container {
-  max-width: 420px;
-  margin: 0 auto;
+.hero-audio-toggle {
+  margin-top: 1.25rem;
+  border: none;
+  background: transparent;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
 }
 
-.video-portada {
+.hero-video-col {
+  margin-top: 2rem;
+}
+
+.hero-video-wrapper {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+.hero-video-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.hero-video {
   width: 100%;
-  border-radius: 28px;
-  display: block;
+  height: 100%;
   object-fit: cover;
 }
 
-.video-wrapper {
-  position: relative;
-  display: inline-block;
-  max-width: 100%;
-}
-
-.video-wrapper video {
-  max-width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-}
-
-/* Botón para activar audio */
-.btn-audio {
+.hero-video-overlay {
   position: absolute;
-  bottom: 16px;
-  right: 16px;
-  padding: 10px 18px;
-  border-radius: 999px;
-  border: none;
-  background: #ffffffdd;
-  color: #3b1a8f;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(252, 211, 77, 0.05), transparent 55%);
+}
+
+/* =========================================
+   4. SECCIONES GENERALES
+========================================= */
+
+.section-padding {
+  padding: 4.5rem 0;
+}
+
+.section-light {
+  background-color: var(--color-bg);
+}
+
+.section-soft {
+  background-color: var(--color-soft);
+}
+
+.section-white {
+  background-color: #ffffff;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
   font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.btn-audio:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.3);
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  margin-top: 0.35rem;
+  margin-bottom: 0.6rem;
 }
 
-body {
-  padding-bottom: 60px; /* Para que el contenido no quede debajo del footer */
+.section-lead {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.9;
 }
 
-/* Todas las fotos cuadradas con esquinas redondeadas */
-.foto-cuadrada {
-  max-width: 150px;
-  width: 150%;          /* Se adapta al ancho del contenedor */
-  max-width: 450px;     /* Tamaño máximo visual (puedes subir/bajar este valor) */
-  border-radius: 18px; /* Esquinas redondeadas */
+/* =========================================
+   5. TARJETAS Y UTILIDADES
+========================================= */
+
+.highlight-card,
+.service-card,
+.devocional-card,
+.contact-primary,
+.contact-secondary {
+  border-radius: var(--radius-lg);
+  background-color: #ffffff;
+  padding: 1.5rem 1.7rem;
+  box-shadow: var(--shadow-soft);
 }
 
-/* Popup Banner Mellky Villegas */
-.popup-overlay {
-  position: fixed;
-  top: 0;
+.highlight-card h3,
+.service-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.highlight-card p,
+.service-card p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.icon-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.icon-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.icon-list li::before {
+  content: "•";
+  position: absolute;
   left: 0;
-  width: 100%;
+  top: 0;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+}
+
+/* =========================================
+   6. FOTO PERFIL Y PORTADA LIBRO
+========================================= */
+
+.book-cover-wrapper,
+.profile-photo-wrapper {
+  max-width: 360px;
+  margin-inline: auto;
+}
+
+.book-cover-img,
+.profile-photo-img {
+  border-radius: var(--radius-lg);
+}
+
+/* =========================================
+   7. SECCIÓN VOZ & COMUNICACIÓN
+========================================= */
+
+.service-card {
   height: 100%;
-  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.service-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.service-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* =========================================
+   8. SECCIÓN DEVOCIONAL
+========================================= */
+
+.devocional-card {
+  text-align: left;
+}
+
+.devocional-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   9. SECCIÓN CONTACTO
+========================================= */
+
+.contact-section .contact-primary p,
+.contact-section .contact-secondary p {
+  color: var(--color-text-muted);
+}
+
+.contact-actions {
+  margin-top: 1.5rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(18, 140, 126, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(18, 140, 126, 0.45);
+  opacity: 0.95;
+}
+
+.contact-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   10. BANNER INFERIOR DE LANZAMIENTO
+========================================= */
+
+.launch-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 1.2rem;
   display: flex;
   justify-content: center;
+  pointer-events: none;
+  z-index: 999;
+  animation: bannerFadeIn 0.7s ease forwards;
+  animation-delay: 3s; /* aparece a los 3 segundos */
+  opacity: 0;
+}
+
+.launch-banner__content {
+  pointer-events: auto;
+  background: rgba(17, 24, 39, 0.94);
+  color: #f9fafb;
+  border-radius: 999px;
+  padding: 0.75rem 1.6rem;
+  display: flex;
   align-items: center;
-  z-index: 99999;
+  gap: 0.9rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.45);
+  max-width: 960px;
+  width: calc(100% - 2rem);
 }
 
-.popup-content {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 420px;
-  width: 90%;
-  text-align: center;
-  animation: fadeInPopup 0.6s ease;
+.launch-badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(251, 191, 36, 0.18);
+  color: #facc15;
 }
 
-.popup-close {
+.launch-text {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.launch-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.launch-link {
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  text-decoration: underline;
+}
+
+.launch-cta {
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: none;
+  text-decoration: none;
+  background: #facc15;
+  color: #111827;
+  font-weight: 600;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.launch-cta:hover {
+  background: #fbbf24;
+  transform: translateY(-1px);
+}
+
+.launch-close {
   background: transparent;
   border: none;
-  font-size: 32px;
-  font-weight: bold;
-  position: absolute;
-  top: 12px;
-  right: 20px;
+  color: #9ca3af;
+  font-size: 1rem;
   cursor: pointer;
-  color: #000;
+  margin-left: 0.5rem;
 }
 
-@keyframes fadeInPopup {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+.launch-close:hover {
+  color: #d1d5db;
+}
+
+@keyframes bannerFadeIn {
+  from {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   11. FOOTER
+========================================= */
+
+.site-footer {
+  padding: 1.4rem 0;
+  background-color: #0b1120;
+  color: #e5e7eb;
+  font-size: 0.85rem;
+}
+
+/* =========================================
+   12. EFECTO SUTIL DE ENTRADA
+   - Animación simple para algunos bloques
+========================================= */
+
+.fade-in-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   13. RESPONSIVE / AJUSTES MÓVILES
+========================================= */
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    padding-top: 6rem;
+  }
+
+  .hero-text-col {
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    margin-inline: auto;
+  }
+
+  .hero-audio-toggle {
+    display: inline-block;
+  }
+
+  .hero-video-col {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .launch-banner__content {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 1.2rem;
+  }
+
+  .launch-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
