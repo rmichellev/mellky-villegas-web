@@ -179,6 +179,14 @@ a:hover {
   box-shadow: var(--shadow-soft);
   transform: translateY(0);
   transition: transform 0.35s ease;
+  max-width: 380px;   /* controla el ancho máximo */
+  margin-inline: auto; /* lo centra */
+}
+
+@media (min-width: 992px) {
+  .hero-video-wrapper {
+    max-width: 320px;
+  }
 }
 
 .hero-video-wrapper:hover {
