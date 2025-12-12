@@ -1,823 +1,561 @@
-/* =========================================================
-   PALETA & RESETEO
-   ========================================================= */
+/* ======================================================
+  SITIO: Mellky Villegas
+  ARCHIVO: css/styles.css
+  OBJETIVO: Estilos globales + secciones + componentes
+  NOTAS:
+  - Paleta elegante con morado como acento.
+  - Contraste alto para legibilidad.
+  - Estética premium (glass, sombras suaves, bordes redondos).
+====================================================== */
 
-:root {
-  --mellky-purple: #7c3aed;        /* Morado principal */
-  --mellky-purple-dark: #4c1d95;   /* Morado profundo */
-  --mellky-purple-soft: #ede9fe;   /* Morado muy suave */
-  --mellky-gold: #f4b100;          /* Dorado elegante */
-  --mellky-navy: #020617;          /* Fondo más oscuro */
-  --mellky-navy-soft: #02091a;     /* Fondo secciones */
-  --mellky-navy-card: #0b1220;     /* Tarjetas oscuras */
-  --text-dark: #111827;            /* Texto principal oscuro */
-  --text-muted-dark: #4b5563;      /* Texto secundario oscuro */
-  --text-light: #f9fafb;           /* Texto claro */
-  --text-light-soft: #e5e7eb;      /* Texto claro más suave */
+/* =========================
+  1) VARIABLES / BASE
+========================= */
+:root{
+  --bg-0: #070712;
+  --bg-1: #0b0b18;
+  --bg-2: #101026;
+
+  --text-0: #ffffff;
+  --text-1: rgba(255,255,255,.88);
+  --text-2: rgba(255,255,255,.70);
+
+  --ink-0: #0b0b18;
+  --ink-1: rgba(11,11,24,.80);
+
+  --card: rgba(255,255,255,.06);
+  --card-2: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.14);
+
+  --accent: #8b5cf6;   /* morado elegante */
+  --accent-2: #a78bfa; /* morado suave */
+  --gold: #f6c445;     /* detalle fino */
+  --green: #1fd07a;    /* WhatsApp */
+
+  --shadow: 0 22px 60px rgba(0,0,0,.45);
+  --radius: 22px;
+  --radius-sm: 16px;
+
+  --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
-  background-color: var(--mellky-navy);
-  color: var(--text-light);
+  font-family: var(--font-sans);
+  color: var(--text-1);
+  background: radial-gradient(1200px 600px at 20% 0%, rgba(139,92,246,.20), transparent 55%),
+              radial-gradient(900px 600px at 80% 20%, rgba(246,196,69,.10), transparent 60%),
+              linear-gradient(180deg, var(--bg-0), var(--bg-1));
+  overflow-x: hidden;
 }
 
-/* Textos base */
-p,
-li {
-  font-size: 1rem;
-  line-height: 1.7;
+a{ color: inherit; text-decoration: none; }
+a:hover{ opacity: .95; }
+
+.muted{ color: var(--text-2); }
+
+/* Bootstrap helpers override */
+.text-light-50{ color: rgba(255,255,255,.65) !important; }
+
+/* =========================
+  2) NAVBAR
+========================= */
+.site-nav{
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(7,7,18,.55);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  transition: background .25s ease, box-shadow .25s ease;
 }
 
-h1, h2, h3, h4, h5 {
-  margin: 0 0 0.75rem 0;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+.site-nav.nav-scrolled{
+  background: rgba(7,7,18,.78);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-/* Utilidades de color globales */
-.text-dark {
-  color: var(--text-dark) !important;
-}
-
-.text-light {
-  color: var(--text-light) !important;
-}
-
-.text-muted {
-  color: #9ca3af !important;
-}
-
-.text-accent {
-  color: var(--mellky-gold) !important;
-}
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
-.navbar {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
-}
-
-.navbar-light .navbar-brand {
-  color: var(--text-dark);
-  letter-spacing: 0.06em;
+.brand{ display: flex; flex-direction: column; line-height: 1.1; }
+.brand-title{
+  font-family: var(--font-serif);
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  letter-spacing: .3px;
+}
+.brand-subtitle{
+  font-size: .85rem;
+  color: rgba(255,255,255,.70);
 }
 
-.navbar-light .navbar-brand span.brand-accent {
-  color: var(--mellky-purple);
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: var(--text-muted-dark);
+.navbar-dark .navbar-nav .nav-link{
+  color: rgba(255,255,255,.75);
   font-weight: 500;
-  font-size: 0.95rem;
-  padding-inline: 0.9rem;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus,
-.navbar-light .navbar-nav .nav-link.active {
-  color: var(--mellky-purple);
-}
-
-/* Botón WhatsApp del header */
-.navbar .btn-header-whatsapp {
-  padding: 0.7rem 1.6rem;
   border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #a855f7, #6366f1);
-  color: #ffffff;
+  padding: .45rem .75rem;
+  transition: background .2s ease, color .2s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+}
+
+.btn-whatsapp{
+  background: linear-gradient(135deg, rgba(139,92,246,.95), rgba(167,139,250,.95));
+  border: 1px solid rgba(255,255,255,.18);
+  color: white;
+  border-radius: 999px;
+  padding: .6rem 1rem;
   font-weight: 600;
-  font-size: 0.95rem;
-  box-shadow: 0 14px 36px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 12px 30px rgba(139,92,246,.25);
 }
 
-.navbar .btn-header-whatsapp:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-}
-
-/* =========================================================
-   SECCIONES GENERALES
-   ========================================================= */
-
-section {
-  padding: 5rem 0;
-}
-
-/* Secciones claras (texto oscuro) */
-.bg-light,
-section.bg-light {
-  background-color: #f9fafb !important;
-  color: var(--text-dark);
-}
-
-.bg-light h2,
-.bg-light h3,
-.bg-light p,
-.bg-light li {
-  color: var(--text-dark);
-}
-
-/* Secciones oscuras */
-.section-dark {
-  background: radial-gradient(circle at top left, #111827 0, #020617 45%, #020617 100%);
-  color: var(--text-light);
-}
-
-/* Títulos de sección */
-.section-title {
-  font-size: clamp(2rem, 2.3vw, 2.4rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-.section-subtitle {
-  font-size: 1rem;
-  color: var(--text-muted-dark);
-}
-
-/* Pequeña línea decorativa bajo títulos (opcional) */
-.section-title-bar {
-  width: 80px;
-  height: 4px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--mellky-purple), var(--mellky-gold));
-  margin-top: 0.5rem;
-}
-
-/* =========================================================
-   HERO (INICIO)
-   ========================================================= */
-
-.hero-section {
-  min-height: 100vh;
-  padding-top: 7rem;
-  padding-bottom: 5rem;
-  background:
-    radial-gradient(circle at top left, rgba(94, 92, 255, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(180, 83, 255, 0.25), transparent 55%),
-    linear-gradient(135deg, #020617 0%, #020617 35%, #111827 100%);
-  color: var(--text-light);
-}
-
-.hero-section .hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.7);
-  color: var(--mellky-purple-soft);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-section .hero-badge::before {
-  content: "✨";
-}
-
-.hero-section .hero-title {
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
-  line-height: 1.1;
-  color: #ffffff;
-}
-
-.hero-section .lead {
-  color: rgba(249, 250, 251, 0.86);
-  max-width: 34rem;
-}
-
-/* Grupo de botones del hero */
-.hero-cta-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.9rem;
-  margin-top: 1.6rem;
-}
-
-/* Botones generales */
-.btn-main {
-  border-radius: 999px;
-  padding: 0.9rem 1.8rem;
-  font-weight: 600;
-  font-size: 0.98rem;
-  border: none;
-  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
-}
-
-.btn-main-primary {
-  background: linear-gradient(135deg, #6366f1, #a855f7);
-  color: #ffffff;
-  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.55);
-}
-
-.btn-main-primary:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-}
-
-.btn-main-secondary {
-  background: transparent;
-  color: #e5e7eb;
-  border: 1px solid rgba(148, 163, 184, 0.7);
-}
-
-.btn-main-secondary:hover {
-  background: rgba(15, 23, 42, 0.7);
-}
-
-/* Etiqueta de audio "Con audio / Sin audio" */
-.hero-audio-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: rgba(226, 232, 240, 0.9);
-}
-
-.hero-audio-toggle i,
-.hero-audio-toggle span.emoji {
-  font-size: 1.1rem;
-}
-
-/* Video portada */
-.video-container {
-  display: flex;
-  justify-content: center;
-}
-
-.video-wrapper {
+/* =========================
+  3) HERO
+========================= */
+.hero{
   position: relative;
-  max-width: 420px;
+  padding-top: 110px; /* espacio navbar */
+  padding-bottom: 64px;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
 }
 
-.video-wrapper video {
-  width: 100%;
-  border-radius: 24px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
-}
-
-.btn-audio {
+.hero-bg{
   position: absolute;
-  bottom: 16px;
-  left: 16px;
-  padding: 0.55rem 1.1rem;
-  border-radius: 999px;
-  border: none;
-  background: rgba(15, 23, 42, 0.88);
-  color: #e5e7eb;
-  font-size: 0.85rem;
-  font-weight: 500;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(139,92,246,.22), transparent 60%),
+    radial-gradient(800px 500px at 75% 15%, rgba(246,196,69,.10), transparent 58%),
+    linear-gradient(180deg, rgba(7,7,18,0.00), rgba(7,7,18,0.55) 55%, rgba(7,7,18,0.85));
+  pointer-events: none;
+}
+
+.hero-content{ position: relative; z-index: 1; }
+
+.hero-badge{
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-}
-
-.btn-audio:hover {
-  background: rgba(15, 23, 42, 0.96);
-}
-
-/* =========================================================
-   SECCIÓN LIBRO (#libro)
-   ========================================================= */
-
-#libro {
-  background: radial-gradient(circle at top left, #f9fafb 0, #ece9ff 40%, #f9fafb 100%);
-  color: var(--text-dark);
-}
-
-#libro .section-title {
-  color: var(--text-dark);
-}
-
-#libro p {
-  color: var(--text-muted-dark);
-}
-
-#libro .accordion-button {
+  gap: .5rem;
+  padding: .5rem .85rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.85);
   font-weight: 600;
-  color: var(--text-dark);
+  margin-bottom: 14px;
 }
 
-#libro .accordion-button:not(.collapsed) {
-  background-color: var(--mellky-purple-soft);
-  color: var(--text-dark);
+.hero-title{
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.05;
+  margin: 0 0 14px;
+  letter-spacing: .2px;
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
 }
 
-#libro .accordion-body {
-  color: var(--text-muted-dark);
+.hero-lead{
+  font-size: 1.15rem;
+  color: rgba(255,255,255,.88);
+  margin-bottom: 10px;
 }
 
-/* Imagen del libro */
-#libro img {
-  border-radius: 18px;
-  box-shadow: 0 18px 48px rgba(148, 163, 184, 0.5);
+.hero-sub{
+  color: rgba(255,255,255,.72);
+  max-width: 54ch;
+  margin-bottom: 18px;
 }
 
-/* CTA bajo la descripción del libro */
-#libro .btn-main-primary {
-  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.5);
+.hero-cta{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
 
-/* =========================================================
-   SOBRE MELLKY (#Mellky Villegas)
-   ========================================================= */
-
-#Mellky\ Villegas {
-  background: radial-gradient(circle at top left, #111827 0, #020617 50%, #020617 100%);
-  color: var(--text-light);
+.hero-note{
+  color: rgba(255,255,255,.62);
+  font-size: .95rem;
+  margin: 0;
 }
 
-#Mellky\ Villegas .section-title {
-  color: #ffffff;
-}
-
-#Mellky\ Villegas p {
-  color: rgba(226, 232, 240, 0.88);
-}
-
-#Mellky\ Villegas ul li {
-  color: rgba(226, 232, 240, 0.9);
-}
-
-/* Foto Mellky */
-.profile-photo {
-  border-radius: 24px;
-  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
-}
-
-/* =========================================================
-   VOZ & COMUNICACIÓN (#voz)
-   ========================================================= */
-
-#voz {
-  background-color: #f9fafb;
-  color: var(--text-dark);
-}
-
-#voz .section-title {
-  color: var(--text-dark);
-}
-
-#voz p {
-  color: var(--text-muted-dark);
-}
-
-/* Tarjetas de servicios */
-#voz .card {
-  border: none;
-  border-radius: 18px;
-  box-shadow: 0 14px 40px rgba(148, 163, 184, 0.35);
-}
-
-#voz .card-body {
-  padding: 1.5rem 1.4rem 1.7rem 1.4rem;
-}
-
-#voz .card-title {
-  font-size: 1.05rem;
+/* Botones premium */
+.btn-primary-soft{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(135deg, rgba(59,130,246,.95), rgba(139,92,246,.95));
+  color: white;
   font-weight: 700;
-  color: var(--mellky-purple-dark);
+  box-shadow: 0 16px 40px rgba(59,130,246,.18);
+}
+.btn-primary-soft:hover{ transform: translateY(-1px); }
+
+.btn-outline-soft{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.04);
+  color: rgba(255,255,255,.90);
+  font-weight: 700;
+}
+.btn-outline-soft:hover{
+  background: rgba(255,255,255,.08);
 }
 
-#voz .card-text {
-  color: var(--text-muted-dark);
+/* =========================
+  4) VIDEO (HERO)
+========================= */
+.hero-video-col{
+  display: flex;
+  justify-content: flex-end; /* empuja el video a la derecha */
 }
 
-/* Botones de WhatsApp en esta sección */
-#voz .btn-main-primary {
-  padding-inline: 1.4rem;
+.video-card{
+  position: relative;
+  width: min(520px, 100%);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
 
-/* =========================================================
-   DEVOCIONAL (#devocional)
-   ========================================================= */
-
-.devocional-section {
-  background: radial-gradient(circle at top left, #1f2937 0, #020617 55%, #020617 100%);
-  color: var(--text-light);
+.hero-video{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  transform: translateZ(0);
 }
 
-.devocional-card {
-  background: radial-gradient(circle at top left, rgba(148, 163, 253, 0.16), rgba(15, 23, 42, 0.98));
-  border-radius: 24px;
-  padding: 2.5rem 2.2rem;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+.audio-toggle{
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(11,11,24,.65);
+  color: rgba(255,255,255,.92);
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.35);
+  transition: transform .2s ease, background .2s ease;
+}
+.audio-toggle:hover{ transform: translateY(-1px); }
+.audio-icon{ width: 20px; display: inline-block; }
+
+/* =========================
+  5) SECCIONES
+========================= */
+.section{
+  padding: 84px 0;
 }
 
-.devocional-tag {
-  font-size: 0.9rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: #a5b4fc;
+.section-light{
+  background: radial-gradient(1100px 600px at 20% 0%, rgba(139,92,246,.10), transparent 60%),
+              linear-gradient(180deg, #f7f7ff, #f1f1ff);
+  color: var(--ink-0);
+}
+.section-light .section-title,
+.section-light .card-soft-title{ color: #0b0b18; }
+.section-light .section-subtitle,
+.section-light .card-soft-text{ color: rgba(11,11,24,.75); }
+
+.section-dark{
+  background: radial-gradient(1000px 500px at 15% 10%, rgba(139,92,246,.18), transparent 62%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-0));
 }
 
-.devocional-card .section-title {
-  color: #ffffff;
+.section-dark-alt{
+  background: radial-gradient(900px 500px at 80% 0%, rgba(139,92,246,.18), transparent 62%),
+              linear-gradient(180deg, var(--bg-0), #070719);
 }
 
-.devocional-text {
-  color: rgba(226, 232, 240, 0.9);
+.section-head{
+  max-width: 72ch;
+  margin-bottom: 26px;
+}
+.section-head-dark .section-title{ color: rgba(255,255,255,.95); }
+.section-head-dark .section-subtitle{ color: rgba(255,255,255,.72); }
+
+.section-kicker{
+  font-weight: 800;
+  letter-spacing: .20em;
+  font-size: .85rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.section-title{
+  font-family: var(--font-serif);
+  font-weight: 700;
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+.section-subtitle{
+  margin: 0;
+  font-size: 1.05rem;
 }
 
-/* Botón principal del devocional (WhatsApp) */
-.devocional-card .btn-main-primary {
+.section-actions{
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.section-actions-note{
+  color: rgba(255,255,255,.68);
+}
+.section-light .section-actions-note{
+  color: rgba(11,11,24,.68);
+}
+
+/* =========================
+  6) CARDS (Light)
+========================= */
+.card-soft{
+  border-radius: var(--radius);
+  border: 1px solid rgba(11,11,24,.10);
+  background: rgba(255,255,255,.80);
+  box-shadow: 0 18px 40px rgba(11,11,24,.08);
+  padding: 22px;
+  height: 100%;
+}
+.card-soft-title{
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+.card-soft-text{ margin: 0; }
+
+/* =========================
+  7) GLASS (Dark cards)
+========================= */
+.grid-two{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.glass{
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.glass-wide{ max-width: 980px; }
+
+.glass-title{
+  margin: 0 0 10px;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+}
+.glass-text{
+  color: rgba(255,255,255,.78);
+  margin: 0 0 14px;
+}
+
+.bullets{
+  margin: 0 0 18px 18px;
+  color: rgba(255,255,255,.80);
+}
+.bullets li{ margin-bottom: 10px; }
+
+.mini-cards{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.mini-card{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(11,11,24,.35);
+  padding: 14px;
+}
+.mini-card-title{
+  margin: 0 0 4px;
+  font-weight: 800;
+  color: rgba(255,255,255,.92);
+}
+.mini-card-text{
+  margin: 0;
+  color: rgba(255,255,255,.72);
+}
+
+/* =========================
+  8) CARDS (Glow)
+========================= */
+.card-glow{
+  height: 100%;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.14);
+  background: radial-gradient(500px 280px at 30% 0%, rgba(139,92,246,.16), transparent 60%),
+              rgba(255,255,255,.05);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.card-glow-title{
+  margin: 0 0 10px;
+  font-weight: 900;
+  color: rgba(255,255,255,.95);
+}
+.card-glow-text{
+  margin: 0 0 12px;
+  color: rgba(255,255,255,.76);
+}
+.link-whatsapp{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  color: rgba(167,139,250,.95);
+}
+.link-whatsapp:hover{ text-decoration: underline; }
+
+/* =========================
+  9) CONTACTO
+========================= */
+.btn-whatsapp-big{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 340px;
-}
-
-/* =========================================================
-   CONTACTO (#contacto)
-   ========================================================= */
-
-.contact-section {
-  background: radial-gradient(circle at top right, rgba(129, 140, 248, 0.22), transparent 55%),
-              linear-gradient(145deg, #020617 0%, #020617 40%, #020617 100%);
-  color: var(--text-light);
-}
-
-.contact-container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 0 1.5rem;
-  border-radius: 28px 28px 0 0;
-}
-
-/* Cards de contacto */
-.contact-card {
-  background: radial-gradient(circle at top left, rgba(148, 163, 253, 0.25), rgba(15, 23, 42, 0.98));
-  border-radius: 22px;
-  padding: 2rem 1.75rem;
-  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
-}
-
-.contact-card.secondary {
-  background: radial-gradient(circle at top left, rgba(236, 72, 153, 0.25), rgba(15, 23, 42, 0.98));
-}
-
-.contact-card h3 {
-  font-size: 1.3rem;
-  color: #ffffff;
-}
-
-.contact-card p,
-.contact-card li {
-  color: rgba(226, 232, 240, 0.92);
-}
-
-/* Botón WhatsApp grande */
-.btn-whatsapp {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  padding: 0.95rem 2.2rem;
   border-radius: 999px;
-  border: none;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
-  box-shadow: 0 18px 48px rgba(22, 163, 74, 0.65);
-  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(135deg, rgba(31,208,122,.95), rgba(17,166,96,.95));
+  color: white;
+  font-weight: 900;
+  padding: 14px 18px;
+  box-shadow: 0 16px 40px rgba(31,208,122,.18);
 }
 
-.btn-whatsapp:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 22px 56px rgba(22, 163, 74, 0.75);
-  opacity: 0.96;
-}
-
-.contact-note {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
-  color: #9ca3af;
-}
-
-/* Lista de datos de contacto */
-.contact-list {
+.contact-list{
   list-style: none;
-  padding-left: 0;
-  margin: 0;
+  padding: 0;
+  margin: 0 0 10px;
+}
+.contact-list li{
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  color: rgba(255,255,255,.78);
+}
+.contact-list li:last-child{ border-bottom: 0; }
+.contact-list span{
+  color: rgba(255,255,255,.92);
+  font-weight: 800;
+}
+.contact-link{
+  color: rgba(167,139,250,.95);
+  font-weight: 800;
+}
+.contact-link:hover{ text-decoration: underline; }
+
+/* =========================
+  10) LAUNCH BAR (Nuevo libro)
+  - Este reemplaza el bloque feo de links sueltos.
+========================= */
+.launch-bar{
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: none; /* se muestra por JS */
 }
 
-.contact-list li {
-  margin-bottom: 0.4rem;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-footer {
-  background-color: #020617;
-  color: #9ca3af;
-  font-size: 0.9rem;
-  padding: 1.6rem 0;
-}
-
-footer a {
-  color: #c4b5fd;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 991.98px) {
-  .hero-section {
-    text-align: center;
-  }
-
-  .hero-section .lead {
-    margin-inline: auto;
-  }
-
-  .hero-cta-group {
-    justify-content: center;
-  }
-
-  .video-wrapper {
-    margin-top: 2rem;
-  }
-
-  .contact-container {
-    padding-inline: 1rem;
-  }
-}
-
-@media (max-width: 575.98px) {
-  section {
-    padding: 3.5rem 0;
-  }
-
-  .devocional-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .contact-card {
-    padding: 1.7rem 1.3rem;
-  }
-}
-
-/* =========================================================
-   BANNER NUEVO LIBRO – MODERNO & ELEGANTE
-   ========================================================= */
-
-.book-announcement {
-  position: relative;
-  width: 100%;
-  padding: 1.2rem 1.5rem;
-  background: linear-gradient(
-    135deg,
-    rgba(124, 58, 237, 0.15),
-    rgba(15, 23, 42, 0.95)
-  );
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-}
-
-.book-announcement__content {
-  max-width: 1200px;
-  margin: 0 auto;
+.launch-inner{
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 1rem 1.5rem;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 14px 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(7,7,18,.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0,0,0,.40);
 }
 
-.book-announcement__tag {
-  padding: 0.25rem 0.8rem;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #a855f7, #6366f1);
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.book-announcement__text {
-  flex: 1;
-  margin: 0;
-  font-size: 0.95rem;
-  color: #f8fafc;
-}
-
-.book-announcement__text strong {
-  color: #ffffff;
-}
-
-.book-announcement__actions {
+.launch-text{
   display: flex;
-  gap: 0.9rem;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,.88);
+  font-weight: 700;
+  flex-wrap: wrap;
 }
 
-.book-announcement__link {
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.45rem 1.1rem;
-  border-radius: 999px;
-  transition: all 0.2s ease;
-}
-
-.book-announcement__link.primary {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-}
-
-.book-announcement__link.primary:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.book-announcement__link.secondary {
-  color: #c4b5fd;
-}
-
-.book-announcement__link.secondary:hover {
-  color: #ffffff;
-}
-
-/* Botón cerrar */
-.book-announcement__close {
-  position: absolute;
-  top: 0.6rem;
-  right: 0.8rem;
-  border: none;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-.book-announcement__close:hover {
-  color: #ffffff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .book-announcement__content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .book-announcement__actions {
-    width: 100%;
-    flex-wrap: wrap;
-  }
-}
-
-/* =====================================================
-   BOTÓN AUDIO – ESTILO PREMIUM
-===================================================== */
-
-.audio-toggle-premium {
+.launch-pill{
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 0.9rem;
-  padding: 0.45rem 1rem;
+  padding: 6px 10px;
   border-radius: 999px;
-  border: none;
-  cursor: pointer;
-
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 500;
-
-  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
-  transition: all 0.25s ease;
+  background: rgba(139,92,246,.22);
+  border: 1px solid rgba(139,92,246,.30);
+  color: rgba(255,255,255,.92);
+  font-weight: 900;
 }
 
-.audio-toggle-premium:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.45);
+.launch-actions{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.audio-toggle-premium:active {
-  transform: scale(0.98);
+.launch-link{
+  color: rgba(255,255,255,.82);
+  font-weight: 800;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.launch-link:hover{ background: rgba(255,255,255,.10); }
+
+.launch-btn{
+  color: white;
+  font-weight: 900;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(135deg, rgba(139,92,246,.95), rgba(59,130,246,.95));
 }
 
-.audio-toggle-premium .audio-icon {
-  font-size: 1rem;
+.launch-close{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  font-weight: 900;
 }
 
-.audio-toggle-premium.active {
-  background: linear-gradient(135deg, #22c55e, #16a34a);
+/* =========================
+  11) FOOTER
+========================= */
+.site-footer{
+  padding: 34px 0 90px; /* espacio por launch bar */
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: rgba(7,7,18,.55);
 }
 
-/* =====================================================
-   VIDEO HERO – AJUSTES FINOS
-===================================================== */
-
-.hero-video-col {
-  margin-left: auto;              /* lo empuja hacia la derecha */
-  padding-left: 2rem;
-}
-
-.hero-video-col video,
-.hero-video-col iframe {
-  border-radius: 1.1rem;          /* puntas redondas elegantes */
-  overflow: hidden;
-
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
-}
-
-/* =====================================================
-   RESPONSIVE – NO SE ROMPE EN MÓVIL
-===================================================== */
-
-@media (max-width: 991px) {
-  .hero-video-col {
-    padding-left: 0;
-    margin-top: 1.8rem;
-  }
-
-  .audio-toggle-premium {
-    justify-content: center;
-  }
-}
-
-/* =====================================================
-   HERO: TEXTO + VIDEO EN 2 COLUMNAS (DESKTOP)
-   - Evita que el video se vaya abajo
-   - Mantiene mobile apilado
-===================================================== */
-
-/* En desktop: siempre lado a lado */
-@media (min-width: 992px) {
-  .hero-section .container {
-    position: relative;
-  }
-
-  /* Si ya tienes un wrapper tipo "row" o similar, esto lo fuerza */
-  .hero-section .row,
-  .hero-section .hero-row,
-  .hero-section .hero-grid,
-  .hero-section .hero-wrap {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 2.2rem !important;
-    flex-wrap: nowrap !important; /* CLAVE: no se baja el video */
-  }
-
-  .hero-text-col {
-    flex: 0 0 56% !important;
-    max-width: 56% !important;
-  }
-
-  .hero-video-col {
-    flex: 0 0 44% !important;
-    max-width: 44% !important;
-    margin-top: 0 !important;     /* evita que caiga abajo por márgenes */
-    margin-left: auto !important; /* lo empuja hacia la derecha */
-    padding-left: 1.6rem !important;
-  }
-
-  .hero-video-col video,
-  .hero-video-col iframe {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 1.1rem !important; /* puntas redondas sutiles */
-    overflow: hidden !important;
-    display: block !important;
-  }
-}
-
-/* En tablet/móvil: apilado (normal) */
-@media (max-width: 991.98px) {
-  .hero-text-col,
-  .hero-video-col {
-    max-width: 100% !important;
-  }
-
-  .hero-video-col {
-    padding-left: 0 !important;
-    margin-top: 1.4rem !important;
-  }
+/* =========================
+  12) RESPONSIVE
+========================= */
+@media (max-width: 991.98px){
+  .hero{ padding-top: 96px; min-height: auto; }
+  .hero-video-col{ justify-content: center; }
+  .grid-two{ grid-template-columns: 1fr; }
+  .launch-inner{ flex-direction: column; align-items: flex-start; }
+  .launch-actions{ width: 100%; justify-content: flex-start; flex-wrap: wrap; }
 }
