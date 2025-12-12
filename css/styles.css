@@ -687,3 +687,77 @@ footer a {
     flex-wrap: wrap;
   }
 }
+
+/* =====================================================
+   BOTÓN AUDIO – ESTILO PREMIUM
+===================================================== */
+
+.audio-toggle-premium {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+  transition: all 0.25s ease;
+}
+
+.audio-toggle-premium:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(124, 58, 237, 0.45);
+}
+
+.audio-toggle-premium:active {
+  transform: scale(0.98);
+}
+
+.audio-toggle-premium .audio-icon {
+  font-size: 1rem;
+}
+
+.audio-toggle-premium.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+/* =====================================================
+   VIDEO HERO – AJUSTES FINOS
+===================================================== */
+
+.hero-video-col {
+  margin-left: auto;              /* lo empuja hacia la derecha */
+  padding-left: 2rem;
+}
+
+.hero-video-col video,
+.hero-video-col iframe {
+  border-radius: 1.1rem;          /* puntas redondas elegantes */
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* =====================================================
+   RESPONSIVE – NO SE ROMPE EN MÓVIL
+===================================================== */
+
+@media (max-width: 991px) {
+  .hero-video-col {
+    padding-left: 0;
+    margin-top: 1.8rem;
+  }
+
+  .audio-toggle-premium {
+    justify-content: center;
+  }
+}

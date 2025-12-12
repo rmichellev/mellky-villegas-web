@@ -149,10 +149,10 @@
             </div>
 
             <!-- Botón de audio del video -->
-            <button id="btn-audio" class="hero-audio-badge" type="button">
-              🔈 Sin audio
-            </button>
-          </div>
+           <button class="audio-toggle-premium" id="audioToggle">
+  <span class="audio-icon">🔊</span>
+  <span class="audio-text">Audio desactivado</span>
+</button>
 
           <!-- Columna video -->
           <div class="col-lg-6 hero-video-col">
@@ -614,6 +614,21 @@
         });
       }
     });
+
+    const audioBtn = document.getElementById('audioToggle');
+
+audioBtn.addEventListener('click', () => {
+  audioBtn.classList.toggle('active');
+
+  const text = audioBtn.querySelector('.audio-text');
+
+  if (audioBtn.classList.contains('active')) {
+    text.textContent = 'Audio activado';
+  } else {
+    text.textContent = 'Audio desactivado';
+  }
+});
+
 
     // Botón para activar / desactivar audio del video
     if (btnAudio && video) {
