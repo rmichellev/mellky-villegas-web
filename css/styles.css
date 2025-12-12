@@ -1,295 +1,581 @@
-/* =========================================
-   1. VARIABLES Y ESTILOS BASE
-   ========================================= */
+/* =========================================================
+   PALETA & RESETEO
+   ========================================================= */
 
 :root {
-  --color-bg-light: #f4f3ff;
-  --color-bg-dark: #0f1122;
-  --color-primary: #6d28d9;
-  --color-primary-light: #a855f7;
-  --color-primary-dark: #4c1d95;
-  --color-accent: #facc15;
-  --color-text-dark: #111827;
-  --color-text-muted: #4b5563;
-  --color-text-light: #e5e7eb;
-  --color-card: #ffffff;
-  --radius-lg: 1.5rem;
-  --shadow-soft: 0 18px 40px rgba(0,0,0,0.2);
+  --mellky-purple: #7c3aed;        /* Morado principal */
+  --mellky-purple-dark: #4c1d95;   /* Morado profundo */
+  --mellky-purple-soft: #ede9fe;   /* Morado muy suave */
+  --mellky-gold: #f4b100;          /* Dorado elegante */
+  --mellky-navy: #020617;          /* Fondo más oscuro */
+  --mellky-navy-soft: #02091a;     /* Fondo secciones */
+  --mellky-navy-card: #0b1220;     /* Tarjetas oscuras */
+  --text-dark: #111827;            /* Texto principal oscuro */
+  --text-muted-dark: #4b5563;      /* Texto secundario oscuro */
+  --text-light: #f9fafb;           /* Texto claro */
+  --text-light-soft: #e5e7eb;      /* Texto claro más suave */
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: var(--color-bg-dark);
-  color: var(--color-text-light);
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  background-color: var(--mellky-navy);
+  color: var(--text-light);
 }
 
-/* =========================================
-   2. NAVBAR
-   ========================================= */
-
-.main-navbar {
-  background: #ffffff;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  padding: 0.7rem 0;
+/* Textos base */
+p,
+li {
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-.navbar-brand .brand-name {
-  font-family: "Playfair Display", serif;
-  color: #111827;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
+h1, h2, h3, h4, h5 {
+  margin: 0 0 0.75rem 0;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
-.navbar-brand .brand-tagline {
-  font-size: 0.8rem;
-  color: #6b7280;
+/* Utilidades de color globales */
+.text-dark {
+  color: var(--text-dark) !important;
 }
 
-.nav-link {
-  color: #111827 !important;
-  font-weight: 500;
+.text-light {
+  color: var(--text-light) !important;
 }
 
-.btn-navbar-cta {
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  padding: 0.7rem 1.4rem;
-  border-radius: 999px;
-  color: #fff;
-  font-weight: 600;
-  border: none;
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+.text-muted {
+  color: #9ca3af !important;
 }
 
-/* =========================================
-   3. HERO / PORTADA
-   ========================================= */
-
-.hero-section {
-  padding-top: 6rem;
-  padding-bottom: 4.5rem;
-  color: var(--color-text-light);
-  background: radial-gradient(circle at top, rgba(129,140,248,0.25), #0f1122 60%);
+.text-accent {
+  color: var(--mellky-gold) !important;
 }
 
-.hero-title {
-  font-family: "Playfair Display", serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  color: white;
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.18);
 }
 
-.hero-subtitle {
-  font-size: 1.1rem;
-  color: rgba(229,231,235,0.85);
-}
-
-.hero-btn-primary {
-  background: linear-gradient(135deg,#6366f1,#7c3aed);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  border-radius: 999px;
-  font-weight: 600;
-  border: none;
-}
-
-.hero-btn-secondary {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
-  padding: 0.9rem 2rem;
-  border-radius: 999px;
-  color: #fff;
-}
-
-.hero-video-wrapper {
-  max-width: 360px;
-  margin-inline: auto;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-
-/* =========================================
-   4. SECCIONES
-   ========================================= */
-
-.section-light {
-  background: #ffffff;
-  color: var(--color-text-dark);
-}
-
-.section-light .section-title {
-  color: #111827;
-}
-
-.section-light p {
-  color: #4b5563;
-}
-
-.section-soft {
-  background: #0f1122;
-}
-
-.section-soft p,
-.section-soft li {
-  color: rgba(229,231,235,0.92);
-}
-
-.section-title {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  color: white;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 80px;
-  height: 4px;
-  border-radius: 999px;
-  background: linear-gradient(90deg,#a855f7,#facc15);
-}
-
-/* =========================================
-   5. TARJETAS
-   ========================================= */
-
-.service-card,
-.devocional-card,
-.contact-card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 1.4rem;
-  padding: 1.8rem;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
-}
-
-.service-card p,
-.devocional-card p,
-.contact-card p {
-  color: rgba(229,231,235,0.92);
-}
-
-/* =========================================
-   6. CONTACTO
-   ========================================= */
-
-.contact-section {
-  background: radial-gradient(circle at top, rgba(129,140,248,0.2), #0f1122);
-}
-
-.contact-section p,
-.contact-section li {
-  color: rgba(229,231,235,0.95);
-}
-
-.btn-whatsapp {
-  background: linear-gradient(135deg,#22c55e,#16a34a);
-  padding: 1rem 2.5rem;
-  border-radius: 999px;
-  color: #fff;
+.navbar-light .navbar-brand {
+  color: var(--text-dark);
+  letter-spacing: 0.06em;
   font-weight: 700;
-  border: none;
-  font-size: 1.1rem;
-  box-shadow: 0 15px 30px rgba(34,197,94,0.4);
-}
-
-/* =========================================
-   7. BANNER
-   ========================================= */
-
-.launch-banner {
-  position: fixed;
-  bottom: 1.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 999;
-  animation: fadeIn 0.6s ease forwards;
-  animation-delay: 2.5s;
-  opacity: 0;
-}
-
-.launch-banner__content {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  padding: 0.8rem 1.8rem;
-  border-radius: 999px;
-  color: white;
-}
-
-.launch-badge {
-  background: #fde047;
-  color: #78350f;
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
-  font-weight: 600;
-}
-
-.launch-text {
-  color: #f3f4f6;
-}
-
-.launch-cta {
-  background: linear-gradient(135deg,#7c3aed,#a855f7);
-  padding: 0.5rem 1rem;
-  color: #fff;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.launch-close {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.3rem;
-}
-
-/* =========================================
-   8. FOOTER
-   ========================================= */
-
-.site-footer {
-  background: #0b0d1a;
-  padding: 1.5rem 0;
-  text-align: center;
-  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
   font-size: 0.9rem;
 }
 
-/* =========================================
-   9. ANIMACIONES
-   ========================================= */
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.navbar-light .navbar-brand span.brand-accent {
+  color: var(--mellky-purple);
 }
 
-/* =========================================
-   10. RESPONSIVE
-   ========================================= */
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-muted-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-inline: 0.9rem;
+}
 
-@media (max-width: 768px) {
-  .section-title::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--mellky-purple);
+}
 
+/* Botón WhatsApp del header */
+.navbar .btn-header-whatsapp {
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 14px 36px rgba(99, 102, 241, 0.45);
+}
+
+.navbar .btn-header-whatsapp:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SECCIONES GENERALES
+   ========================================================= */
+
+section {
+  padding: 5rem 0;
+}
+
+/* Secciones claras (texto oscuro) */
+.bg-light,
+section.bg-light {
+  background-color: #f9fafb !important;
+  color: var(--text-dark);
+}
+
+.bg-light h2,
+.bg-light h3,
+.bg-light p,
+.bg-light li {
+  color: var(--text-dark);
+}
+
+/* Secciones oscuras */
+.section-dark {
+  background: radial-gradient(circle at top left, #111827 0, #020617 45%, #020617 100%);
+  color: var(--text-light);
+}
+
+/* Títulos de sección */
+.section-title {
+  font-size: clamp(2rem, 2.3vw, 2.4rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted-dark);
+}
+
+/* Pequeña línea decorativa bajo títulos (opcional) */
+.section-title-bar {
+  width: 80px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--mellky-purple), var(--mellky-gold));
+  margin-top: 0.5rem;
+}
+
+/* =========================================================
+   HERO (INICIO)
+   ========================================================= */
+
+.hero-section {
+  min-height: 100vh;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  background:
+    radial-gradient(circle at top left, rgba(94, 92, 255, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(180, 83, 255, 0.25), transparent 55%),
+    linear-gradient(135deg, #020617 0%, #020617 35%, #111827 100%);
+  color: var(--text-light);
+}
+
+.hero-section .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.7);
+  color: var(--mellky-purple-soft);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-section .hero-badge::before {
+  content: "✨";
+}
+
+.hero-section .hero-title {
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.hero-section .lead {
+  color: rgba(249, 250, 251, 0.86);
+  max-width: 34rem;
+}
+
+/* Grupo de botones del hero */
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+/* Botones generales */
+.btn-main {
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  font-size: 0.98rem;
+  border: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+}
+
+.btn-main-primary {
+  background: linear-gradient(135deg, #6366f1, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.55);
+}
+
+.btn-main-primary:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.btn-main-secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+}
+
+.btn-main-secondary:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* Etiqueta de audio "Con audio / Sin audio" */
+.hero-audio-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.hero-audio-toggle i,
+.hero-audio-toggle span.emoji {
+  font-size: 1.1rem;
+}
+
+/* Video portada */
+.video-container {
+  display: flex;
+  justify-content: center;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 420px;
+}
+
+.video-wrapper video {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+}
+
+.btn-audio {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.88);
+  color: #e5e7eb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.btn-audio:hover {
+  background: rgba(15, 23, 42, 0.96);
+}
+
+/* =========================================================
+   SECCIÓN LIBRO (#libro)
+   ========================================================= */
+
+#libro {
+  background: radial-gradient(circle at top left, #f9fafb 0, #ece9ff 40%, #f9fafb 100%);
+  color: var(--text-dark);
+}
+
+#libro .section-title {
+  color: var(--text-dark);
+}
+
+#libro p {
+  color: var(--text-muted-dark);
+}
+
+#libro .accordion-button {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+#libro .accordion-button:not(.collapsed) {
+  background-color: var(--mellky-purple-soft);
+  color: var(--text-dark);
+}
+
+#libro .accordion-body {
+  color: var(--text-muted-dark);
+}
+
+/* Imagen del libro */
+#libro img {
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(148, 163, 184, 0.5);
+}
+
+/* CTA bajo la descripción del libro */
+#libro .btn-main-primary {
+  box-shadow: 0 14px 40px rgba(79, 70, 229, 0.5);
+}
+
+/* =========================================================
+   SOBRE MELLKY (#Mellky Villegas)
+   ========================================================= */
+
+#Mellky\ Villegas {
+  background: radial-gradient(circle at top left, #111827 0, #020617 50%, #020617 100%);
+  color: var(--text-light);
+}
+
+#Mellky\ Villegas .section-title {
+  color: #ffffff;
+}
+
+#Mellky\ Villegas p {
+  color: rgba(226, 232, 240, 0.88);
+}
+
+#Mellky\ Villegas ul li {
+  color: rgba(226, 232, 240, 0.9);
+}
+
+/* Foto Mellky */
+.profile-photo {
+  border-radius: 24px;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.9);
+}
+
+/* =========================================================
+   VOZ & COMUNICACIÓN (#voz)
+   ========================================================= */
+
+#voz {
+  background-color: #f9fafb;
+  color: var(--text-dark);
+}
+
+#voz .section-title {
+  color: var(--text-dark);
+}
+
+#voz p {
+  color: var(--text-muted-dark);
+}
+
+/* Tarjetas de servicios */
+#voz .card {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgba(148, 163, 184, 0.35);
+}
+
+#voz .card-body {
+  padding: 1.5rem 1.4rem 1.7rem 1.4rem;
+}
+
+#voz .card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--mellky-purple-dark);
+}
+
+#voz .card-text {
+  color: var(--text-muted-dark);
+}
+
+/* Botones de WhatsApp en esta sección */
+#voz .btn-main-primary {
+  padding-inline: 1.4rem;
+}
+
+/* =========================================================
+   DEVOCIONAL (#devocional)
+   ========================================================= */
+
+.devocional-section {
+  background: radial-gradient(circle at top left, #1f2937 0, #020617 55%, #020617 100%);
+  color: var(--text-light);
+}
+
+.devocional-card {
+  background: radial-gradient(circle at top left, rgba(148, 163, 253, 0.16), rgba(15, 23, 42, 0.98));
+  border-radius: 24px;
+  padding: 2.5rem 2.2rem;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+}
+
+.devocional-tag {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a5b4fc;
+}
+
+.devocional-card .section-title {
+  color: #ffffff;
+}
+
+.devocional-text {
+  color: rgba(226, 232, 240, 0.9);
+}
+
+/* Botón principal del devocional (WhatsApp) */
+.devocional-card .btn-main-primary {
+  width: 100%;
+  max-width: 340px;
+}
+
+/* =========================================================
+   CONTACTO (#contacto)
+   ========================================================= */
+
+.contact-section {
+  background: radial-gradient(circle at top right, rgba(129, 140, 248, 0.22), transparent 55%),
+              linear-gradient(145deg, #020617 0%, #020617 40%, #020617 100%);
+  color: var(--text-light);
+}
+
+.contact-container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 0 1.5rem;
+  border-radius: 28px 28px 0 0;
+}
+
+/* Cards de contacto */
+.contact-card {
+  background: radial-gradient(circle at top left, rgba(148, 163, 253, 0.25), rgba(15, 23, 42, 0.98));
+  border-radius: 22px;
+  padding: 2rem 1.75rem;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.9);
+}
+
+.contact-card.secondary {
+  background: radial-gradient(circle at top left, rgba(236, 72, 153, 0.25), rgba(15, 23, 42, 0.98));
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.contact-card p,
+.contact-card li {
+  color: rgba(226, 232, 240, 0.92);
+}
+
+/* Botón WhatsApp grande */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.95rem 2.2rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 18px 48px rgba(22, 163, 74, 0.65);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, opacity 0.16s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 56px rgba(22, 163, 74, 0.75);
+  opacity: 0.96;
+}
+
+.contact-note {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Lista de datos de contacto */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  background-color: #020617;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  padding: 1.6rem 0;
+}
+
+footer a {
+  color: #c4b5fd;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991.98px) {
   .hero-section {
     text-align: center;
+  }
+
+  .hero-section .lead {
+    margin-inline: auto;
+  }
+
+  .hero-cta-group {
+    justify-content: center;
+  }
+
+  .video-wrapper {
+    margin-top: 2rem;
+  }
+
+  .contact-container {
+    padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  section {
+    padding: 3.5rem 0;
+  }
+
+  .devocional-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-card {
+    padding: 1.7rem 1.3rem;
   }
 }
