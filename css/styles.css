@@ -761,3 +761,63 @@ footer a {
     justify-content: center;
   }
 }
+
+/* =====================================================
+   HERO: TEXTO + VIDEO EN 2 COLUMNAS (DESKTOP)
+   - Evita que el video se vaya abajo
+   - Mantiene mobile apilado
+===================================================== */
+
+/* En desktop: siempre lado a lado */
+@media (min-width: 992px) {
+  .hero-section .container {
+    position: relative;
+  }
+
+  /* Si ya tienes un wrapper tipo "row" o similar, esto lo fuerza */
+  .hero-section .row,
+  .hero-section .hero-row,
+  .hero-section .hero-grid,
+  .hero-section .hero-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 2.2rem !important;
+    flex-wrap: nowrap !important; /* CLAVE: no se baja el video */
+  }
+
+  .hero-text-col {
+    flex: 0 0 56% !important;
+    max-width: 56% !important;
+  }
+
+  .hero-video-col {
+    flex: 0 0 44% !important;
+    max-width: 44% !important;
+    margin-top: 0 !important;     /* evita que caiga abajo por márgenes */
+    margin-left: auto !important; /* lo empuja hacia la derecha */
+    padding-left: 1.6rem !important;
+  }
+
+  .hero-video-col video,
+  .hero-video-col iframe {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 1.1rem !important; /* puntas redondas sutiles */
+    overflow: hidden !important;
+    display: block !important;
+  }
+}
+
+/* En tablet/móvil: apilado (normal) */
+@media (max-width: 991.98px) {
+  .hero-text-col,
+  .hero-video-col {
+    max-width: 100% !important;
+  }
+
+  .hero-video-col {
+    padding-left: 0 !important;
+    margin-top: 1.4rem !important;
+  }
+}
