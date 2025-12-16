@@ -38,6 +38,19 @@
 
   --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --font-serif: "Playfair Display", Georgia, serif;
+
+   /* Morado principal (un poquito más claro) */
+  --brand-purple: #7A4DFF;     /* antes seguramente era más oscuro */
+  --brand-purple-2: #9A7BFF;   /* apoyo / hover suave */
+
+  /* Fondo lila claro (como "El libro") */
+  --soft-lilac-bg: radial-gradient(1200px 600px at 20% 10%, rgba(122,77,255,.14), transparent 60%),
+                   radial-gradient(900px 500px at 80% 30%, rgba(154,123,255,.12), transparent 55%),
+                   linear-gradient(180deg, rgba(255,255,255,.96), rgba(246,244,255,.96));
+
+  /* Texto para fondos claros */
+  --text-on-light: #1F1B2E;
+  --muted-on-light: rgba(31,27,46,.78);
 }
 
 *{ box-sizing: border-box; }
@@ -558,4 +571,209 @@ a:hover{ opacity: .95; }
   .grid-two{ grid-template-columns: 1fr; }
   .launch-inner{ flex-direction: column; align-items: flex-start; }
   .launch-actions{ width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+}
+
+/* =========================================================
+   AJUSTE GLOBAL DE ACENTO MORADO (más claro, elegante)
+   ========================================================= */
+
+/* Links y detalles */
+a { color: var(--brand-purple); }
+a:hover { color: var(--brand-purple-2); }
+
+/* Botones típicos (cubre varias clases comunes sin romper diseño) */
+.btn,
+.button,
+.cta,
+.hero-cta,
+.nav-cta,
+.whatsapp-cta {
+  background: var(--brand-purple);
+  border-color: rgba(122,77,255,.35);
+}
+
+.btn:hover,
+.button:hover,
+.cta:hover,
+.hero-cta:hover,
+.nav-cta:hover,
+.whatsapp-cta:hover {
+  background: var(--brand-purple-2);
+}
+
+/* Si tienes botones outline */
+.btn-outline,
+.button-outline,
+.cta-outline {
+  color: var(--brand-purple);
+  border-color: rgba(122,77,255,.40);
+}
+.btn-outline:hover,
+.button-outline:hover,
+.cta-outline:hover {
+  background: rgba(122,77,255,.10);
+}
+
+/* =========================================================
+   FONDO LILA CLARO EN "EL LIBRO" Y "VOZ & COMUNICACIÓN"
+   ========================================================= */
+
+/* El libro */
+#libro{
+  background: var(--soft-lilac-bg);
+  color: var(--text-on-light);
+}
+#libro p, #libro li{
+  color: var(--muted-on-light);
+}
+
+/* Voz & Comunicación (ajusta el ID si tu HTML usa otro) */
+#voz,
+#voz-comunicacion,
+#voz-comunicacion-section,
+#vozComunicacion{
+  background: var(--soft-lilac-bg);
+  color: var(--text-on-light);
+}
+#voz p, #voz li,
+#voz-comunicacion p, #voz-comunicacion li,
+#voz-comunicacion-section p, #voz-comunicacion-section li,
+#vozComunicacion p, #vozComunicacion li{
+  color: var(--muted-on-light);
+}
+
+/* ======================================================
+   AJUSTE FINO DE PALETA – MORADO + LILA CLARO
+   ====================================================== */
+
+:root{
+  /* Morado principal (ligeramente más claro y elegante) */
+  --brand-purple: #7A5CFF;
+  --brand-purple-soft: #9B87FF;
+
+  /* Fondo lila claro (igual a sección EL LIBRO) */
+  --lilac-light-bg: radial-gradient(
+      1200px 600px at 15% 10%,
+      rgba(122, 92, 255, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 85% 35%,
+      rgba(155, 135, 255, 0.14),
+      transparent 55%
+    ),
+    linear-gradient(
+      180deg,
+      #F7F5FF 0%,
+      #F4F2FF 100%
+    );
+
+  /* Texto para fondo claro */
+  --text-dark-main: #1F1B2E;
+  --text-dark-muted: rgba(31, 27, 46, 0.78);
+}
+
+
+/* ======================================================
+   SECCIÓN: VOZ & COMUNICACIÓN (MISMO LILA QUE "EL LIBRO")
+   ====================================================== */
+
+#voz{
+  background: var(--lilac-light-bg);
+  color: var(--text-dark-main);
+  position: relative;
+}
+
+/* Encabezados de sección */
+#voz .section-kicker{
+  color: var(--brand-purple);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+#voz .section-title{
+  color: var(--text-dark-main);
+}
+
+#voz .section-subtitle{
+  color: var(--text-dark-muted);
+}
+
+
+/* ======================================================
+   TARJETAS (CARD-GLOW) – FONDO CLARO Y LEGIBLE
+   ====================================================== */
+
+#voz .card-glow{
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1.4rem;
+  padding: 2rem;
+  box-shadow:
+    0 20px 40px rgba(122, 92, 255, 0.12),
+    inset 0 0 0 1px rgba(122, 92, 255, 0.10);
+  backdrop-filter: blur(6px);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#voz .card-glow:hover{
+  transform: translateY(-6px);
+  box-shadow:
+    0 30px 60px rgba(122, 92, 255, 0.18),
+    inset 0 0 0 1px rgba(122, 92, 255, 0.18);
+}
+
+/* Títulos de tarjeta */
+#voz .card-glow-title{
+  color: var(--text-dark-main);
+  font-weight: 600;
+}
+
+/* Texto de tarjeta */
+#voz .card-glow-text{
+  color: var(--text-dark-muted);
+  line-height: 1.7;
+}
+
+
+/* ======================================================
+   LINKS A WHATSAPP – MODERNOS Y ELEGANTES
+   ====================================================== */
+
+#voz .link-whatsapp{
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--brand-purple);
+  text-decoration: none;
+  position: relative;
+}
+
+#voz .link-whatsapp::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--brand-purple),
+    var(--brand-purple-soft)
+  );
+  transition: width .3s ease;
+}
+
+#voz .link-whatsapp:hover::after{
+  width: 100%;
+}
+
+
+/* ======================================================
+   RESPONSIVE – SE MANTIENE LIMPIO EN MÓVIL
+   ====================================================== */
+
+@media (max-width: 991px){
+  #voz .card-glow{
+    padding: 1.6rem;
+  }
 }
