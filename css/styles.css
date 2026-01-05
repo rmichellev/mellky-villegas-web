@@ -777,3 +777,21 @@ a:hover { color: var(--brand-purple-2); }
     padding: 1.6rem;
   }
 }
+
+/* ======================================================
+   imagen de referencia del libro 
+   ====================================================== */
+
+   .book-ref {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center; /* cámbialo a flex-start si la quieres alineada a la izquierda */
+}
+
+.book-ref__img {
+  width: 220px;       /* tamaño “pequeño normal” */
+  max-width: 70vw;    /* responsivo en móvil */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
