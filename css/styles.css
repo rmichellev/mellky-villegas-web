@@ -799,13 +799,25 @@ a:hover { color: var(--brand-purple-2); }
 /* =========================================
    EL LIBRO – BAJAR TEXTO A ZONA "TEXTO SÍ"
 ========================================= */
-
-#libro .book-text-offset{
-  padding-top: 170px;   /* ← AQUÍ controlas qué tan abajo queda */
-}
-
 /* Mantener el texto elegante */
 #libro .section-subtitle{
   max-width: 65ch;
 }
 
+/* =========================================
+hablemos seccion de contacto
+========================================= */
+/* Imagen de referencia - sección Hablemos */
+.contact-ref-img{
+  margin: 18px 0 22px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contact-ref-img img{
+  width: 120px;          /* tamaño pequeño y elegante */
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
