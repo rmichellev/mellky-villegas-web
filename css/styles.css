@@ -781,41 +781,17 @@ a:hover { color: var(--brand-purple-2); }
 /* =========================================
    EL LIBRO – TEXTO + IMAGEN EN LA MISMA FILA
 ========================================= */
-
-#libro .book-intro-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  margin-top: 12px;
+/* #libro: permitir que el encabezado tenga ancho completo (evita que la imagen se vaya abajo) */
+#libro .section-head.section-head--wide{
+  max-width: none; /* anula el max-width:72ch global */
 }
 
-#libro .book-intro-text {
-  flex: 1;
-  max-width: 620px;
-}
-
-#libro .book-intro-image {
-  flex: 0 0 260px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-#libro .book-intro-image img {
+/* Imagen del libro a la derecha del subtítulo */
+#libro .book-side-img{
   width: 100%;
-  max-width: 260px;
+  max-width: 260px; /* tamaño controlado */
   height: auto;
+  display: block;
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-}
-
-/* Responsive */
-@media (max-width: 992px) {
-  #libro .book-intro-row {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  #libro .book-intro-image {
-    justify-content: flex-start;
-  }
 }
