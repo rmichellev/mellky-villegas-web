@@ -795,3 +795,13 @@ a:hover { color: var(--brand-purple-2); }
   border-radius: 16px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
+
+/* Centrar el bloque de texto del libro en el espacio (desktop) */
+#libro .book-text-center{
+  min-height: 360px; /* ajusta: 300-380 según te guste */
+}
+
+/* Control de legibilidad del párrafo */
+#libro .section-subtitle{
+  max-width: 65ch;
+}
