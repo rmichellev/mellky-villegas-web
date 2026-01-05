@@ -829,7 +829,7 @@ ganador seccion de sobre mellky
 .ganadora-ref-img{
   margin: 18px 0 22px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .ganadora-ref-img img{
