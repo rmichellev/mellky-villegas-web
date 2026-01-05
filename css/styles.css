@@ -781,17 +781,43 @@ a:hover { color: var(--brand-purple-2); }
 /* ======================================================
    imagen de referencia del libro 
    ====================================================== */
+/* ==============================
+   SECCIÓN EL LIBRO – HEADER
+================================ */
 
-   .book-ref {
-  margin-top: 16px;
+.book-head-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.book-head-text {
+  max-width: 600px;
+}
+
+.book-head-image {
   display: flex;
-  justify-content: center; /* cámbialo a flex-start si la quieres alineada a la izquierda */
+  justify-content: center;
 }
 
-.book-ref__img {
-  width: 220px;       /* tamaño “pequeño normal” */
-  max-width: 70vw;    /* responsivo en móvil */
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.book-head-image img {
+  width: 240px;
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .book-head-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .book-head-text {
+    margin: 0 auto;
+  }
+}
+
