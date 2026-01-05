@@ -796,12 +796,16 @@ a:hover { color: var(--brand-purple-2); }
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* Centrar el bloque de texto del libro en el espacio (desktop) */
-#libro .book-text-center{
-  min-height: 360px; /* ajusta: 300-380 según te guste */
+/* =========================================
+   EL LIBRO – BAJAR TEXTO A ZONA "TEXTO SÍ"
+========================================= */
+
+#libro .book-text-offset{
+  padding-top: 140px;   /* ← AQUÍ controlas qué tan abajo queda */
 }
 
-/* Control de legibilidad del párrafo */
+/* Mantener el texto elegante */
 #libro .section-subtitle{
   max-width: 65ch;
 }
+
