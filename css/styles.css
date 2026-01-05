@@ -784,7 +784,9 @@ a:hover { color: var(--brand-purple-2); }
 .book-ref {
   margin-top: 16px;
   display: flex;
-  justify-content: flex-end; derecha
+  justify-content: auto; /* cámbialo a flex-start si la quieres alineada a la izquierda */
+
+}
 
 .book-ref__img {
   width: 220px;       /* tamaño “pequeño normal” */
