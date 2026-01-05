@@ -801,7 +801,7 @@ a:hover { color: var(--brand-purple-2); }
 ========================================= */
 
 #libro .book-text-offset{
-  padding-top: 140px;   /* ← AQUÍ controlas qué tan abajo queda */
+  padding-top: 170px;   /* ← AQUÍ controlas qué tan abajo queda */
 }
 
 /* Mantener el texto elegante */
